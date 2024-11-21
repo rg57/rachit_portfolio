@@ -1,9 +1,8 @@
-import React, { useState } from "react"
+import { useState } from "react"
 import { Link as RouterLink } from "react-router-dom"
 import {
   AppBar,
   Toolbar,
-  Typography,
   Button,
   IconButton,
   Drawer,
@@ -11,7 +10,6 @@ import {
   ListItem,
   ListItemText,
   Box,
-  useTheme,
 } from "@mui/material"
 import MenuIcon from "@mui/icons-material/Menu"
 import Logo from "../assets/logo.png" // Replace with the path to your logo
@@ -26,7 +24,6 @@ const navItems = [
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
-  const theme = useTheme()
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen)
