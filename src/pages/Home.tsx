@@ -9,7 +9,6 @@ import {
   Card,
   CardContent,
   Box,
-  useTheme,
 } from "@mui/material"
 import {
   Code as CodeIcon,
@@ -28,8 +27,6 @@ import {
 import SmartphoneIcon from "@mui/icons-material/Smartphone"
 
 export default function Home() {
-  const theme = useTheme()
-
   const skills = [
     { name: "React", icon: <CodeIcon color="primary" fontSize="large" /> },
     { name: "Node.js", icon: <BuildIcon color="secondary" fontSize="large" /> },

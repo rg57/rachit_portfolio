@@ -176,7 +176,6 @@ const projects: Project[] = [
 
 export default function Work(): JSX.Element {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
-  const [isHovered, setIsHovered] = useState<number | null>(null)
 
   const handleCardClick = (project: Project): void => {
     setSelectedProject(project)
@@ -217,12 +216,7 @@ export default function Work(): JSX.Element {
         <Grid container spacing={4}>
           {projects.map((project, index) => (
             <Grid item key={index} xs={12} sm={6} md={4}>
-              <motion.div
-                initial={{ scale: 1 }}
-                whileHover={{ scale: 1.05 }}
-                onHoverStart={() => setIsHovered(index)}
-                onHoverEnd={() => setIsHovered(null)}
-              >
+              <motion.div initial={{ scale: 1 }} whileHover={{ scale: 1.05 }}>
                 <Card
                   sx={{
                     height: 400,
