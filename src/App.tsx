@@ -11,6 +11,10 @@ import About from "./pages/About"
 import Contact from "./pages/Contact"
 
 function App() {
+  const portfolioUrl = import.meta.env.VITE_REACT_PORTFOLIO
+
+  console.log("Portfolio URL:", portfolioUrl) // Log the value to verify
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
