@@ -106,7 +106,7 @@ const projects: Project[] = [
       "Redesigned and enhanced the DSCCINDIA website with improved UI and content management features.",
     image: "/placeholder.svg?height=200&width=300",
     skills: ["Laravel", "PHP", "UI/UX Design", "Content Management"],
-    link: "#",
+    link: "https://dsccindia.com/",
     details: [
       "Redesigned the user interface for improved aesthetics and usability.",
       "Implemented new content management features in the admin portal.",
