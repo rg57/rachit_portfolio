@@ -45,12 +45,12 @@ export default function Contact() {
     {
       question: "What technologies do you specialize in?",
       answer:
-        "I specialize in React, React Native, Node.js, Spring Boot, and modern DevOps practices for scalable solutions.",
+        "I specialize in React, React Native, Node.js, Spring Boot, Java , Python , MongoDb , Mysql and modern DevOps practices for scalable solutions.",
     },
     {
       question: "How do you handle communication and updates during a project?",
       answer:
-        "I ensure transparent communication with regular updates via preferred platforms like email, Slack, or Trello.",
+        "I ensure transparent communication with regular updates via preferred platforms like email, whatsapp or call.",
     },
     {
       question: "Can you help with UI/UX design?",
