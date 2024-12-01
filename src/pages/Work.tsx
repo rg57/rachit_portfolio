@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { SetStateAction, useState } from "react"
 import {
   Container,
   Typography,
@@ -16,9 +16,15 @@ import {
   List,
   ListItem,
   ListItemText,
+  ImageList,
+  ImageListItem,
+  Dialog,
 } from "@mui/material"
-import { Close as CloseIcon } from "@mui/icons-material"
+import { Close as CloseIcon, Image } from "@mui/icons-material"
 import { motion, AnimatePresence } from "framer-motion"
+import dscc1 from "../assets/dsccscreenshot1.png"
+import dscc2 from "../assets/dsccscreenshot2.png"
+import dsccLogo from "../assets/dscclogo.png"
 
 interface Project {
   title: string
@@ -32,27 +38,19 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Ticketing Tool",
+    title: "DSCCINDIA Website",
     description:
-      "A comprehensive ticketing system with client and admin mobile apps, and a Node.js server.",
-    image: "/placeholder.svg?height=200&width=300",
-    skills: ["React Native", "Node.js", "MongoDB"],
-    link: "https://github.com/rg57/CC-SERVER.git",
+      "Redesigned and enhanced the DSCCINDIA website with improved UI and content management features.",
+    image: dscc1,
+    skills: ["Laravel", "PHP", "UI/UX Design", "Content Management"],
+    link: "https://dsccindia.com/",
     details: [
-      "Full-stack solution designed to streamline complaint handling and appointment management.",
-      "Client mobile app (React Native): Allows users to submit complaints, schedule appointments, and manage their profiles.",
-      "Admin mobile app (React Native): Enables administrators to handle tickets, manage appointments, and oversee user profiles.",
-      "Server (Node.js): Handles data processing, storage, and API endpoints for both client and admin apps.",
-      "Showcases ability to create a cohesive ecosystem of applications that work together to solve complex business problems.",
+      "Redesigned the user interface for improved aesthetics and usability.",
+      "Implemented new content management features in the admin portal.",
+      "Added functionality to assign photos to specific projects.",
+      "Utilized Laravel for robust backend development and efficient content handling.",
     ],
-
-    screenshots: [
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-    ],
+    screenshots: [dscc1, dscc2],
   },
   {
     title: "InstaFood",
@@ -101,49 +99,6 @@ const projects: Project[] = [
     ],
   },
   {
-    title: "DSCCINDIA Website",
-    description:
-      "Redesigned and enhanced the DSCCINDIA website with improved UI and content management features.",
-    image: "/placeholder.svg?height=200&width=300",
-    skills: ["Laravel", "PHP", "UI/UX Design", "Content Management"],
-    link: "https://dsccindia.com/",
-    details: [
-      "Redesigned the user interface for improved aesthetics and usability.",
-      "Implemented new content management features in the admin portal.",
-      "Added functionality to assign photos to specific projects.",
-      "Utilized Laravel for robust backend development and efficient content handling.",
-    ],
-    screenshots: [
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-    ],
-  },
-  {
-    title: "TES Market",
-    description:
-      "Developed frontend components for a stock market platform using React.js and integrated with Alpaca Market API.",
-    image: "/placeholder.svg?height=200&width=300",
-    skills: ["React.js", "API Integration", "Financial Systems"],
-    link: "#",
-    details: [
-      "Created user interfaces for both client and admin user types.",
-      "Implemented a wallet system for managing user funds.",
-      "Developed buy and sell modules for stock transactions.",
-      "Designed various pages to enhance user experience.",
-      "Integrated with the Alpaca Market API for real-time stock data.",
-    ],
-    screenshots: [
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-    ],
-  },
-  {
     title: "NABS CRM",
     description:
       "A comprehensive enterprise solution for Next Age Building Solutions, featuring mobile apps and a web dashboard.",
@@ -172,10 +127,68 @@ const projects: Project[] = [
       "/placeholder.svg?height=200&width=300",
     ],
   },
+  {
+    title: "Ticketing Tool",
+    description:
+      "A comprehensive ticketing system with client and admin mobile apps, and a Node.js server.",
+    image: "/placeholder.svg?height=200&width=300",
+    skills: ["React Native", "Node.js", "MongoDB"],
+    link: "https://github.com/rg57/CC-SERVER.git",
+    details: [
+      "Full-stack solution designed to streamline complaint handling and appointment management.",
+      "Client mobile app (React Native): Allows users to submit complaints, schedule appointments, and manage their profiles.",
+      "Admin mobile app (React Native): Enables administrators to handle tickets, manage appointments, and oversee user profiles.",
+      "Server (Node.js): Handles data processing, storage, and API endpoints for both client and admin apps.",
+      "Showcases ability to create a cohesive ecosystem of applications that work together to solve complex business problems.",
+    ],
+
+    screenshots: [
+      "/placeholder.svg?height=200&width=300",
+      "/placeholder.svg?height=200&width=300",
+      "/placeholder.svg?height=200&width=300",
+      "/placeholder.svg?height=200&width=300",
+      "/placeholder.svg?height=200&width=300",
+    ],
+  },
+
+  {
+    title: "TES Market",
+    description:
+      "Developed frontend components for a stock market platform using React.js and integrated with Alpaca Market API.",
+    image: "/placeholder.svg?height=200&width=300",
+    skills: ["React.js", "API Integration", "Financial Systems"],
+    link: "#",
+    details: [
+      "Created user interfaces for both client and admin user types.",
+      "Implemented a wallet system for managing user funds.",
+      "Developed buy and sell modules for stock transactions.",
+      "Designed various pages to enhance user experience.",
+      "Integrated with the Alpaca Market API for real-time stock data.",
+    ],
+    screenshots: [
+      "/placeholder.svg?height=200&width=300",
+      "/placeholder.svg?height=200&width=300",
+      "/placeholder.svg?height=200&width=300",
+      "/placeholder.svg?height=200&width=300",
+      "/placeholder.svg?height=200&width=300",
+    ],
+  },
 ]
 
 export default function Work(): JSX.Element {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+  const [open, setOpen] = useState(false)
+  const [currentImage, setCurrentImage] = useState("")
+
+  const handleOpen = (image: SetStateAction<string>) => {
+    setCurrentImage(image)
+    setOpen(true)
+  }
+
+  const handleClose = () => {
+    setOpen(false)
+    setCurrentImage("")
+  }
 
   const handleCardClick = (project: Project): void => {
     setSelectedProject(project)
@@ -403,6 +416,24 @@ export default function Work(): JSX.Element {
                     </ListItem>
                   ))}
                 </List>
+                <ImageList
+                  // sx={{ width: 500, height: 450 }}
+                  cols={3}
+                  rowHeight={164}
+                  sx={{ justifyContent: "space-around", mt: 2 }}
+                >
+                  {selectedProject.screenshots.map((item) => (
+                    <ImageListItem key={item} sx={{ m: 1 }}>
+                      <img
+                        srcSet={`${item}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                        src={`${item}?w=164&h=164&fit=crop&auto=format`}
+                        alt={item}
+                        onClick={() => handleOpen(item)}
+                        loading="lazy"
+                      />
+                    </ImageListItem>
+                  ))}
+                </ImageList>
               </Box>
               <Button
                 variant="contained"
@@ -424,6 +455,10 @@ export default function Work(): JSX.Element {
           </motion.div>
         )}
       </AnimatePresence>
+      <Dialog open={open} onClose={handleClose} maxWidth={"lg"} fullWidth>
+        <img src={currentImage} alt="full Dialog:" />
+        {/* For actual app display add optional default */}
+      </Dialog>
     </Box>
   )
 }

@@ -25,6 +25,7 @@ import {
 } from "@mui/icons-material"
 
 import SmartphoneIcon from "@mui/icons-material/Smartphone"
+import homePageAboutImage from "../assets/homepageabout.png"
 
 export default function Home() {
   const skills = [
@@ -497,7 +498,7 @@ export default function Home() {
               }}
             >
               <img
-                src="/placeholder.svg?height=400&width=600"
+                src={homePageAboutImage}
                 alt="About Me"
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
