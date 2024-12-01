@@ -20,11 +20,10 @@ import {
   ImageListItem,
   Dialog,
 } from "@mui/material"
-import { Close as CloseIcon, Image } from "@mui/icons-material"
+import { Close as CloseIcon } from "@mui/icons-material"
 import { motion, AnimatePresence } from "framer-motion"
 import dscc1 from "../assets/dsccscreenshot1.png"
 import dscc2 from "../assets/dsccscreenshot2.png"
-import dsccLogo from "../assets/dscclogo.png"
 
 interface Project {
   title: string
