@@ -6,6 +6,7 @@ import {
   Grid,
   IconButton,
   Link,
+  Chip,
 } from "@mui/material"
 import {
   GitHub,
@@ -13,16 +14,51 @@ import {
   Twitter,
   Instagram,
   YouTube,
+  Code,
+  Build,
+  Devices,
+  CloudQueue,
 } from "@mui/icons-material"
 import { motion } from "framer-motion"
 
 export default function About() {
   const socialLinks = [
-    { icon: <GitHub />, href: "#", label: "GitHub" },
-    { icon: <LinkedIn />, href: "#", label: "LinkedIn" },
-    { icon: <Twitter />, href: "#", label: "Twitter" },
-    { icon: <Instagram />, href: "#", label: "Instagram" },
-    { icon: <YouTube />, href: "#", label: "YouTube" },
+    {
+      icon: <GitHub />,
+      href: "https://github.com/yourusername",
+      label: "GitHub",
+    },
+    {
+      icon: <LinkedIn />,
+      href: "https://linkedin.com/in/yourusername",
+      label: "LinkedIn",
+    },
+    {
+      icon: <Twitter />,
+      href: "https://twitter.com/yourusername",
+      label: "Twitter",
+    },
+    {
+      icon: <Instagram />,
+      href: "https://instagram.com/yourusername",
+      label: "Instagram",
+    },
+    {
+      icon: <YouTube />,
+      href: "https://youtube.com/c/yourusername",
+      label: "YouTube",
+    },
+  ]
+
+  const skills = [
+    "JavaScript",
+    "React",
+    "Node.js",
+    "Python",
+    "AWS",
+    "Docker",
+    "GraphQL",
+    "MongoDB",
   ]
 
   const fadeIn = {
@@ -48,23 +84,19 @@ export default function About() {
         backgroundPosition: "center",
         color: "white",
         textAlign: "center",
-        padding: "2rem",
+        padding: { xs: "1rem", sm: "1.5rem", md: "2rem" },
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        "&::before": {
-          content: '""',
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          backgroundColor: "rgba(0, 0, 0, 0.6)",
-          zIndex: 0,
+        mt: {
+          xs: 10,
         },
       }}
     >
-      <Container maxWidth="lg" sx={{ zIndex: 1, textAlign: "center" }}>
+      <Container
+        maxWidth="lg"
+        sx={{ zIndex: 1, textAlign: "center", px: { xs: 2, sm: 3, md: 4 } }}
+      >
         <motion.div
           initial="hidden"
           animate="visible"
@@ -75,9 +107,15 @@ export default function About() {
             <Typography
               variant="h1"
               sx={{
-                fontSize: { xs: "2.5rem", md: "4rem" },
+                fontSize: {
+                  xs: "2rem",
+                  sm: "2.5rem",
+                  md: "3.5rem",
+                  lg: "4rem",
+                },
                 fontWeight: "bold",
-                mb: 2,
+                mb: { xs: 2, sm: 3, md: 4 },
+                lineHeight: 1.2,
               }}
             >
               I'm Rachit, a Full Stack Developer
@@ -88,39 +126,85 @@ export default function About() {
               variant="h6"
               sx={{
                 color: "rgba(255, 255, 255, 0.8)",
-                fontSize: { xs: "1rem", md: "1.25rem" },
-                mb: 4,
+                fontSize: { xs: "0.9rem", sm: "1rem", md: "1.25rem" },
+                mb: { xs: 3, sm: 4 },
+                lineHeight: 1.6,
               }}
             >
-              I have 3+ years of experience developing web and mobile
-              applications, specializing in enterprise solutions like CRM and
-              ERP.
+              With 3+ years of experience, I craft innovative web and mobile
+              solutions that drive business growth and enhance user experiences.
             </Typography>
           </motion.div>
           <motion.div variants={fadeIn}>
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: "#FF3366",
+                color: "white",
+                "&:hover": { backgroundColor: "#E62E5C" },
+                mb: 2,
+                mr: 2,
+              }}
+              href="#portfolio"
+            >
+              View My Projects
+            </Button>
             <Button
               variant="outlined"
               sx={{
                 color: "white",
                 borderColor: "white",
                 "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.1)" },
-                mb: 4,
+                mb: 2,
               }}
-              href="#"
+              href="#contact"
             >
-              Explore My Work
+              Get in Touch
             </Button>
           </motion.div>
 
+          {/* Skills Section */}
+          <motion.div variants={fadeIn}>
+            <Box sx={{ mt: 4, mb: 6 }}>
+              <Typography variant="h6" sx={{ mb: 2, color: "#FF3366" }}>
+                My Tech Stack
+              </Typography>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  justifyContent: "center",
+                  gap: 1,
+                }}
+              >
+                {skills.map((skill) => (
+                  <Chip
+                    key={skill}
+                    label={skill}
+                    sx={{
+                      backgroundColor: "rgba(255, 255, 255, 0.1)",
+                      color: "white",
+                      "&:hover": { backgroundColor: "rgba(255, 51, 102, 0.2)" },
+                    }}
+                  />
+                ))}
+              </Box>
+            </Box>
+          </motion.div>
+
           {/* Grid Section */}
-          <Grid container spacing={4} sx={{ textAlign: "left" }}>
+          <Grid container spacing={{ xs: 4, md: 6 }} sx={{ textAlign: "left" }}>
             {/* About Me */}
             <Grid item xs={12} md={6}>
               <motion.div variants={fadeIn}>
                 <Box>
                   <Typography
                     variant="h5"
-                    sx={{ color: "#FF3366", fontWeight: "bold", mb: 2 }}
+                    sx={{
+                      color: "#FF3366",
+                      fontWeight: "bold",
+                      mb: { xs: 2, sm: 3 },
+                    }}
                   >
                     ABOUT ME
                   </Typography>
@@ -132,9 +216,11 @@ export default function About() {
                       mb: 2,
                     }}
                   >
-                    As a Full Stack Developer, I specialize in crafting dynamic,
-                    scalable applications. My expertise spans JavaScript, React,
-                    Node.js, and more.
+                    As a passionate Full Stack Developer, I thrive on turning
+                    complex problems into elegant, efficient solutions. My
+                    journey in tech has equipped me with a diverse skill set and
+                    a keen eye for detail, allowing me to create seamless,
+                    user-centric applications that make a real impact.
                   </Typography>
                   <Button
                     variant="text"
@@ -143,9 +229,9 @@ export default function About() {
                       textTransform: "none",
                       "&:hover": { textDecoration: "underline" },
                     }}
-                    href="#"
+                    href="/about"
                   >
-                    Learn More →
+                    Learn More About My Journey →
                   </Button>
                 </Box>
               </motion.div>
@@ -169,9 +255,11 @@ export default function About() {
                       mb: 2,
                     }}
                   >
-                    I have hands-on experience building enterprise solutions
-                    like CRM and ERP systems, creating robust platforms that
-                    improve efficiency and user experience.
+                    From developing robust CRM systems to creating intuitive
+                    mobile apps, my portfolio showcases a range of projects that
+                    demonstrate my technical expertise and creative
+                    problem-solving skills. Each project is a testament to my
+                    commitment to delivering high-quality, scalable solutions.
                   </Typography>
                   <Button
                     variant="text"
@@ -180,14 +268,74 @@ export default function About() {
                       textTransform: "none",
                       "&:hover": { textDecoration: "underline" },
                     }}
-                    href="#"
+                    href="/portfolio"
                   >
-                    Browse Portfolio →
+                    Explore My Portfolio →
                   </Button>
                 </Box>
               </motion.div>
             </Grid>
           </Grid>
+
+          {/* Services Section */}
+          <motion.div variants={fadeIn}>
+            <Box sx={{ mt: 6, mb: 4 }}>
+              <Typography
+                variant="h5"
+                sx={{ color: "#FF3366", fontWeight: "bold", mb: 3 }}
+              >
+                SERVICES I OFFER
+              </Typography>
+              <Grid container spacing={2}>
+                {[
+                  {
+                    icon: <Code />,
+                    title: "Web Development",
+                    desc: "Custom websites and web applications",
+                  },
+                  {
+                    icon: <Devices />,
+                    title: "Mobile App Development",
+                    desc: "Cross-platform mobile solutions",
+                  },
+                  {
+                    icon: <Build />,
+                    title: "API Development",
+                    desc: "Robust and scalable API architectures",
+                  },
+                  {
+                    icon: <CloudQueue />,
+                    title: "Cloud Solutions",
+                    desc: "AWS and cloud infrastructure setup",
+                  },
+                ].map((service, index) => (
+                  <Grid item xs={12} sm={6} md={3} key={index}>
+                    <Box
+                      sx={{
+                        p: 2,
+                        height: "100%",
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        textAlign: "center",
+                      }}
+                    >
+                      {service.icon}
+                      <Typography variant="h6" sx={{ my: 1, color: "white" }}>
+                        {service.title}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        sx={{ color: "rgba(255, 255, 255, 0.7)" }}
+                      >
+                        {service.desc}
+                      </Typography>
+                    </Box>
+                  </Grid>
+                ))}
+              </Grid>
+            </Box>
+          </motion.div>
 
           {/* Social Links */}
           <Box sx={{ mt: 4 }}>
@@ -196,7 +344,7 @@ export default function About() {
                 variant="h6"
                 sx={{ color: "#FF3366", fontWeight: "bold", mb: 2 }}
               >
-                FOLLOW ME
+                LET'S CONNECT
               </Typography>
               <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
                 {socialLinks.map((social, index) => (
@@ -222,6 +370,28 @@ export default function About() {
               </Box>
             </motion.div>
           </Box>
+
+          {/* Call to Action */}
+          <motion.div variants={fadeIn}>
+            <Box sx={{ mt: 6 }}>
+              <Typography variant="h5" sx={{ color: "white", mb: 2 }}>
+                Ready to start your next project?
+              </Typography>
+              <Button
+                variant="contained"
+                sx={{
+                  backgroundColor: "#FF3366",
+                  color: "white",
+                  "&:hover": { backgroundColor: "#E62E5C" },
+                  px: 4,
+                  py: 1,
+                }}
+                href="/contact"
+              >
+                Let's Work Together
+              </Button>
+            </Box>
+          </motion.div>
         </motion.div>
       </Container>
     </Box>
