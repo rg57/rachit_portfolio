@@ -68,6 +68,9 @@ export default function Home() {
         background: "linear-gradient(135deg, #2A0845 0%, #6441A5 100%)",
         minHeight: "100vh",
         color: "white",
+        mt: {
+          xs: 8,
+        },
       }}
     >
       {/* Hero Section */}

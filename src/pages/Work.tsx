@@ -220,7 +220,7 @@ export default function Work(): JSX.Element {
             fontWeight: 700,
             color: "#FF3366",
             mb: 6,
-            mt: 12,
+            mt: 6,
           }}
         >
           My Work
