@@ -78,7 +78,7 @@ export default function Home() {
           alignItems: "center",
           position: "relative",
           overflow: "hidden",
-          py: { xs: 8, md: 0 },
+          py: { xs: 4, sm: 6, md: 0 },
         }}
       >
         <Container maxWidth="lg">
@@ -161,8 +161,8 @@ export default function Home() {
                 sx={{
                   position: "relative",
                   width: "100%",
-                  height: "500px",
-                  display: { xs: "none", md: "block" },
+                  height: { xs: "300px", sm: "400px", md: "500px" },
+                  display: "block",
                 }}
               >
                 {/* Laptop Base */}
@@ -170,9 +170,12 @@ export default function Home() {
                   sx={{
                     position: "absolute",
                     top: "50%",
-                    left: "80%",
-                    transform:
-                      "translate(-50%, -50%) rotate(-45deg) skew(20deg, 20deg)",
+                    left: { xs: "50%", md: "80%" },
+                    transform: {
+                      xs: "translate(-50%, -50%) rotate(-45deg) skew(20deg, 20deg) scale(0.6)",
+                      sm: "translate(-50%, -50%) rotate(-45deg) skew(20deg, 20deg) scale(0.8)",
+                      md: "translate(-50%, -50%) rotate(-45deg) skew(20deg, 20deg)",
+                    },
                     width: "400px",
                     height: "250px",
                     bgcolor: "#1a1a1a",
@@ -230,7 +233,7 @@ export default function Home() {
                       color: "white",
                       padding: "8px 16px",
                       borderRadius: "20px",
-                      fontSize: "14px",
+                      fontSize: { xs: "12px", sm: "14px" },
                       fontWeight: "bold",
                       boxShadow: "0 4px 15px rgba(255, 51, 102, 0.3)",
                       zIndex: index,
@@ -246,6 +249,10 @@ export default function Home() {
                         },
                       },
                       animationDelay: `${index * 0.5}s`,
+                      display: {
+                        xs: index < 3 ? "block" : "none",
+                        sm: "block",
+                      },
                     }}
                   >
                     {tech}
