@@ -7,24 +7,44 @@ import {
   LinearProgress,
 } from "@mui/material"
 import { motion } from "framer-motion"
+import {
+  FaReact,
+  FaNodeJs,
+  FaMobileAlt,
+  FaJs,
+  FaHtml5,
+  FaJava,
+  FaGitAlt,
+  FaAws,
+  FaPython,
+} from "react-icons/fa"
+import {
+  SiTypescript,
+  SiSpringboot,
+  SiMysql,
+  SiMongodb,
+  SiFlutter,
+  SiFirebase,
+} from "react-icons/si"
+import { AiOutlineApi } from "react-icons/ai"
 
 const skills = [
-  { name: "React", level: 10 },
-  { name: "Node.js", level: 8 },
-  { name: "React Native", level: 10 },
-  { name: "JavaScript", level: 9 },
-  { name: "TypeScript", level: 6 },
-  { name: "HTML & CSS", level: 8 },
-  { name: "Spring Boot", level: 9 },
-  { name: "MySQL", level: 7 },
-  { name: "MongoDB", level: 7 },
-  { name: "AWS EC2", level: 8 },
-  { name: "Git", level: 8 },
-  { name: "REST APIs", level: 10 },
-  { name: "Flutter", level: 8 },
-  { name: "Firebase", level: 9 },
-  { name: "Java", level: 10 },
-  { name: "Python", level: 8 },
+  { name: "React", level: 10, icon: FaReact },
+  { name: "Node.js", level: 8, icon: FaNodeJs },
+  { name: "React Native", level: 10, icon: FaMobileAlt },
+  { name: "JavaScript", level: 9, icon: FaJs },
+  { name: "TypeScript", level: 6, icon: SiTypescript },
+  { name: "HTML & CSS", level: 8, icon: FaHtml5 },
+  { name: "Spring Boot", level: 9, icon: SiSpringboot },
+  { name: "MySQL", level: 7, icon: SiMysql },
+  { name: "MongoDB", level: 7, icon: SiMongodb },
+  { name: "AWS EC2", level: 8, icon: FaAws },
+  { name: "Git", level: 8, icon: FaGitAlt },
+  { name: "REST APIs", level: 10, icon: AiOutlineApi },
+  { name: "Flutter", level: 8, icon: SiFlutter },
+  { name: "Firebase", level: 9, icon: SiFirebase },
+  { name: "Java", level: 10, icon: FaJava },
+  { name: "Python", level: 8, icon: FaPython },
 ]
 
 const categories = [
@@ -170,6 +190,17 @@ export default function Skills() {
                       },
                     }}
                   >
+                    {skill.icon && (
+                      <skill.icon
+                        size={24}
+                        style={{
+                          marginBottom: "8px",
+                          color: "#FF3366",
+                          marginRight: "10px",
+                          marginTop: "10px",
+                        }}
+                      />
+                    )}
                     <Typography
                       variant="body1"
                       align="center"
