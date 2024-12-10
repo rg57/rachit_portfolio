@@ -1,4 +1,3 @@
-import React from "react"
 import {
   Container,
   Typography,
@@ -16,11 +15,6 @@ import { GitHub, LinkedIn, ExpandMore } from "@mui/icons-material"
 import YouTubeIcon from "@mui/icons-material/YouTube"
 
 export default function Contact() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    console.log("Form submitted")
-  }
-
   const socialLinks = [
     { icon: <GitHub />, href: "https://github.com/rg57", label: "GitHub" },
     {
