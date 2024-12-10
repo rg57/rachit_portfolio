@@ -11,12 +11,10 @@ import {
   AccordionDetails,
 } from "@mui/material"
 import { motion } from "framer-motion"
-import { GitHub, LinkedIn, ExpandMore, Share } from "@mui/icons-material"
+import { GitHub, LinkedIn, ExpandMore } from "@mui/icons-material"
 import YouTubeIcon from "@mui/icons-material/YouTube"
 
 export default function Contact() {
-  const portfolioUrl = "https://rachit-portfolio-two.vercel.app/"
-
   const socialLinks = [
     { icon: <GitHub />, href: "https://github.com/rg57", label: "GitHub" },
     {
