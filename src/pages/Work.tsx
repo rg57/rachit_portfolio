@@ -34,7 +34,6 @@ import nirman1 from "../assets/nirman1.png"
 import nirman2 from "../assets/nirman2.png"
 import nirman3 from "../assets/nirman3.png"
 import nirman4 from "../assets/nirman4.png"
-import nirman5 from "../assets/nirman5.png"
 import nirmanlogo from "../assets/nirmanlogo.png"
 import teslogo from "../assets/teslogo.png"
 import nabslogo from "../assets/nabslogo.jpeg"
@@ -137,7 +136,7 @@ const projects: Project[] = [
       "Architect assignment and management.",
       "PDF generation for current process stage reports.",
     ],
-    screenshots: [nirman1, nirman2, nirman3, nirman4, nirman5],
+    screenshots: [nirman1, nirman2, nirman3, nirman4],
   },
 
   {
