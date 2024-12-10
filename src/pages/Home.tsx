@@ -135,7 +135,7 @@ export default function Home() {
                   >
                     View Projects
                   </Button>
-                  <Button
+                  {/* <Button
                     component={RouterLink}
                     to="/resume.pdf"
                     download
@@ -154,7 +154,7 @@ export default function Home() {
                     }}
                   >
                     Download Resume
-                  </Button>
+                  </Button> */}
                 </Box>
               </Box>
             </Grid>

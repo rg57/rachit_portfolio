@@ -12,7 +12,8 @@ import {
   AccordionDetails,
 } from "@mui/material"
 import { motion } from "framer-motion"
-import { GitHub, LinkedIn, Twitter, ExpandMore } from "@mui/icons-material"
+import { GitHub, LinkedIn, ExpandMore } from "@mui/icons-material"
+import YouTubeIcon from "@mui/icons-material/YouTube"
 
 export default function Contact() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -21,16 +22,29 @@ export default function Contact() {
   }
 
   const socialLinks = [
-    { icon: <GitHub />, href: "#", label: "GitHub" },
-    { icon: <LinkedIn />, href: "#", label: "LinkedIn" },
-    { icon: <Twitter />, href: "#", label: "Twitter" },
+    { icon: <GitHub />, href: "https://github.com/rg57", label: "GitHub" },
+    {
+      icon: <LinkedIn />,
+      href: "https://www.linkedin.com/in/rachit-gupta-767428126",
+      label: "LinkedIn",
+    },
+    {
+      icon: <YouTubeIcon />,
+      href: "https://www.youtube.com/@codeplaytech6467",
+      label: "Twitter",
+    },
   ]
 
   const faqItems = [
     {
+      question: "Who are Full Stack software developer?",
+      answer:
+        "Full Stack Software Developer specializing in crafting seamless user experiences on the client side, designing intuitive UIs, and architecting robust applications. Proficient in server-side development, including creating application logic, setting up databases, providing API functionality, and ensuring smooth testing and deployment.",
+    },
+    {
       question: "What is your experience in software development?",
       answer:
-        "I have over 5 years of experience in full-stack development, specializing in creating modern, scalable web and mobile applications.",
+        "I have over 5 years of experience in full-stack development, specializing in creating modern, scalable web , mobile and enterpises applications.",
     },
     {
       question: "How do you charge for your services?",
@@ -45,12 +59,12 @@ export default function Contact() {
     {
       question: "What technologies do you specialize in?",
       answer:
-        "I specialize in React, React Native, Node.js, Spring Boot, Java , Python , MongoDb , Mysql and modern DevOps practices for scalable solutions.",
+        "I specialize in React, React Native, Node.js, Spring Boot, Java , Python , MongoDb , Mysql ,Aws and modern DevOps practices for scalable solutions.",
     },
     {
       question: "How do you handle communication and updates during a project?",
       answer:
-        "I ensure transparent communication with regular updates via preferred platforms like email, whatsapp or call.",
+        "I ensure transparent communication with regular updates via preferred platforms like email, whatsapp or by calling",
     },
     {
       question: "Can you help with UI/UX design?",
@@ -139,7 +153,9 @@ export default function Contact() {
             >
               <Box
                 component="form"
-                onSubmit={handleSubmit}
+                action="https://formspree.io/f/xgvebzvl"
+                method="POST"
+                // onSubmit={handleSubmit}
                 noValidate
                 sx={{
                   display: "flex",
@@ -184,6 +200,30 @@ export default function Contact() {
                   label="Email Address"
                   name="email"
                   required
+                  variant="outlined"
+                  InputLabelProps={{
+                    style: { color: "rgba(255, 255, 255, 0.7)" },
+                  }}
+                  sx={{
+                    input: { color: "white" },
+                    "& .MuiOutlinedInput-root": {
+                      "& fieldset": {
+                        borderColor: "rgba(255, 255, 255, 0.3)",
+                      },
+                      "&:hover fieldset": {
+                        borderColor: "rgba(255, 255, 255, 0.5)",
+                      },
+                      "&.Mui-focused fieldset": {
+                        borderColor: "#FF3366",
+                      },
+                    },
+                  }}
+                />
+                <TextField
+                  fullWidth
+                  id="contact"
+                  label="Contact Number"
+                  name="contact"
                   variant="outlined"
                   InputLabelProps={{
                     style: { color: "rgba(255, 255, 255, 0.7)" },

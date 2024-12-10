@@ -1,7 +1,7 @@
 import { Box, Container, Typography, Link, IconButton } from "@mui/material"
 import GitHubIcon from "@mui/icons-material/GitHub"
 import LinkedInIcon from "@mui/icons-material/LinkedIn"
-import TwitterIcon from "@mui/icons-material/Twitter"
+import YouTubeIcon from "@mui/icons-material/YouTube"
 
 export default function Footer() {
   return (
@@ -24,7 +24,7 @@ export default function Footer() {
           <IconButton
             color="inherit"
             component={Link}
-            href="https://github.com"
+            href="https://github.com/rg57"
             target="_blank"
             rel="noopener"
             sx={{ color: "white", "&:hover": { color: "primary.main" } }} // White icon with hover effect
@@ -34,7 +34,7 @@ export default function Footer() {
           <IconButton
             color="inherit"
             component={Link}
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/rachit-gupta-767428126"
             target="_blank"
             rel="noopener"
             sx={{ color: "white", "&:hover": { color: "primary.main" } }} // White icon with hover effect
@@ -44,12 +44,12 @@ export default function Footer() {
           <IconButton
             color="inherit"
             component={Link}
-            href="https://twitter.com"
+            href="https://www.youtube.com/@codeplaytech6467"
             target="_blank"
             rel="noopener"
             sx={{ color: "white", "&:hover": { color: "primary.main" } }} // White icon with hover effect
           >
-            <TwitterIcon />
+            <YouTubeIcon />
           </IconButton>
         </Box>
       </Container>

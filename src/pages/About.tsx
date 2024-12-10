@@ -11,41 +11,30 @@ import {
 import {
   GitHub,
   LinkedIn,
-  Twitter,
-  Instagram,
   YouTube,
   Code,
   Build,
   Devices,
-  CloudQueue,
+  Storage,
 } from "@mui/icons-material"
 import { motion } from "framer-motion"
+import { Link as RouterLink } from "react-router-dom"
 
 export default function About() {
   const socialLinks = [
     {
       icon: <GitHub />,
-      href: "https://github.com/yourusername",
+      href: "https://github.com/rg57",
       label: "GitHub",
     },
     {
       icon: <LinkedIn />,
-      href: "https://linkedin.com/in/yourusername",
+      href: "https://www.linkedin.com/in/rachit-gupta-767428126",
       label: "LinkedIn",
     },
     {
-      icon: <Twitter />,
-      href: "https://twitter.com/yourusername",
-      label: "Twitter",
-    },
-    {
-      icon: <Instagram />,
-      href: "https://instagram.com/yourusername",
-      label: "Instagram",
-    },
-    {
       icon: <YouTube />,
-      href: "https://youtube.com/c/yourusername",
+      href: "https://www.youtube.com/@codeplaytech6467",
       label: "YouTube",
     },
   ]
@@ -56,9 +45,15 @@ export default function About() {
     "Node.js",
     "Python",
     "AWS",
-    "Docker",
+    "Spring-Boot",
+    "Firebase",
+    "React Native",
+    "Flutter",
     "GraphQL",
     "MongoDB",
+    "EC2",
+    "Figma",
+    "Architecture",
   ]
 
   const fadeIn = {
@@ -131,13 +126,15 @@ export default function About() {
                 lineHeight: 1.6,
               }}
             >
-              With 3+ years of experience, I craft innovative web and mobile
+              With 5 years of experience, I craft innovative web and mobile
               solutions that drive business growth and enhance user experiences.
             </Typography>
           </motion.div>
           <motion.div variants={fadeIn}>
             <Button
               variant="contained"
+              component={RouterLink}
+              to="/work"
               sx={{
                 backgroundColor: "#FF3366",
                 color: "white",
@@ -150,6 +147,8 @@ export default function About() {
               View My Projects
             </Button>
             <Button
+              component={RouterLink}
+              to="/contact"
               variant="outlined"
               sx={{
                 color: "white",
@@ -157,7 +156,7 @@ export default function About() {
                 "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.1)" },
                 mb: 2,
               }}
-              href="#contact"
+              // href="#contact"
             >
               Get in Touch
             </Button>
@@ -222,7 +221,7 @@ export default function About() {
                     a keen eye for detail, allowing me to create seamless,
                     user-centric applications that make a real impact.
                   </Typography>
-                  <Button
+                  {/* <Button
                     variant="text"
                     sx={{
                       color: "#FF3366",
@@ -232,7 +231,7 @@ export default function About() {
                     href="/about"
                   >
                     Learn More About My Journey →
-                  </Button>
+                  </Button> */}
                 </Box>
               </motion.div>
             </Grid>
@@ -261,7 +260,7 @@ export default function About() {
                     problem-solving skills. Each project is a testament to my
                     commitment to delivering high-quality, scalable solutions.
                   </Typography>
-                  <Button
+                  {/* <Button
                     variant="text"
                     sx={{
                       color: "#FF3366",
@@ -271,7 +270,7 @@ export default function About() {
                     href="/portfolio"
                   >
                     Explore My Portfolio →
-                  </Button>
+                  </Button> */}
                 </Box>
               </motion.div>
             </Grid>
@@ -303,10 +302,11 @@ export default function About() {
                     title: "API Development",
                     desc: "Robust and scalable API architectures",
                   },
+
                   {
-                    icon: <CloudQueue />,
-                    title: "Cloud Solutions",
-                    desc: "AWS and cloud infrastructure setup",
+                    icon: <Storage />,
+                    title: "Enterprise Solutions",
+                    desc: "CRM and ERP Software Services",
                   },
                 ].map((service, index) => (
                   <Grid item xs={12} sm={6} md={3} key={index}>

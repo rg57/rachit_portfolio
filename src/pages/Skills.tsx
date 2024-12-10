@@ -27,6 +27,39 @@ const skills = [
   { name: "Python", level: 8 },
 ]
 
+const categories = [
+  {
+    title: "UI Design and Architecture",
+    level: 90,
+    tools: ["Figma", "Sketch", "FigJam"],
+  },
+  {
+    title: "FrontEnd",
+    level: 95,
+    tools: [
+      "React",
+      "React Native",
+      "Flutter",
+      "HTML",
+      "CSS",
+      "Javscript",
+      "typeScript",
+    ],
+  },
+  {
+    title: "BackEnd",
+    level: 100,
+    tools: ["Java", "Python", "Spring-Boot", "Rest Api"],
+  },
+  { title: "Database", level: 85, tools: ["MongoDB", "MYSQL", "Firebase"] },
+  { title: "Deployment", level: 75, tools: ["EC2", "Android Play Console"] },
+  {
+    title: "No Code Tools",
+    level: 70,
+    tools: ["Wordpress", "Shopify"],
+  },
+]
+
 export default function Skills() {
   return (
     <Box
@@ -34,12 +67,9 @@ export default function Skills() {
         background: "linear-gradient(135deg, #2A0845 0%, #6441A5 100%)",
         py: 10,
         color: "white",
-        display: "flex",
-        flexDirection: "column",
       }}
     >
       <Container maxWidth="lg">
-        {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -60,8 +90,7 @@ export default function Skills() {
           </Typography>
         </motion.div>
 
-        {/* Skills Grid */}
-        <Grid container spacing={4}>
+        <Grid container spacing={4} sx={{ mt: 6 }}>
           {skills.map((skill, index) => (
             <Grid item key={index} xs={6} sm={4} md={3}>
               <motion.div
@@ -73,8 +102,7 @@ export default function Skills() {
                   ease: "easeOut",
                 }}
                 whileHover={{
-                  scale: 1.1,
-                  boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)",
+                  scale: 1.05,
                 }}
               >
                 <Tooltip
@@ -155,6 +183,115 @@ export default function Skills() {
             </Grid>
           ))}
         </Grid>
+
+        <Box
+          sx={{
+            mt: { xs: 4, sm: 6 },
+            p: { xs: 2, sm: 3, md: 4 },
+            borderRadius: { xs: "16px", sm: "24px" },
+            background: "rgba(255, 255, 255, 0.05)",
+            backdropFilter: "blur(10px)",
+          }}
+        >
+          <Grid container spacing={{ xs: 3, sm: 4, md: 6 }}>
+            {categories.map((category, index) => (
+              <Grid item xs={12} sm={6} key={index}>
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Box sx={{ mb: 4 }}>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        mb: { xs: 1, sm: 2 },
+                        flexWrap: "wrap",
+                      }}
+                    >
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          fontWeight: 500,
+                          fontSize: { xs: "1rem", sm: "1.25rem" },
+                        }}
+                      >
+                        {category.title}
+                      </Typography>
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          fontWeight: 500,
+                          fontSize: { xs: "1rem", sm: "1.25rem" },
+                        }}
+                      >
+                        {category.level}%
+                      </Typography>
+                    </Box>
+                    <Box sx={{ position: "relative" }}>
+                      <Box
+                        sx={{
+                          height: "2px",
+                          width: "100%",
+                          backgroundColor: "rgba(255, 255, 255, 0.1)",
+                          borderRadius: "1px",
+                        }}
+                      />
+                      <Box
+                        sx={{
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
+                          height: "2px",
+                          width: `${category.level}%`,
+                          background:
+                            "linear-gradient(90deg, #FF3366, #FF33FF)",
+                          borderRadius: "1px",
+                          transition: "width 1s ease-in-out",
+                        }}
+                      />
+                      <Box
+                        sx={{
+                          position: "absolute",
+                          top: "-4px",
+                          left: `${category.level}%`,
+                          transform: "translateX(-50%)",
+                          width: "10px",
+                          height: "10px",
+                          borderRadius: "50%",
+                          backgroundColor: "#FF3366",
+                          border: "2px solid white",
+                          transition: "left 1s ease-in-out",
+                        }}
+                      />
+                    </Box>
+                    <Box
+                      sx={{ mt: 2, display: "flex", flexWrap: "wrap", gap: 1 }}
+                    >
+                      {category.tools.map((tool, toolIndex) => (
+                        <Typography
+                          key={toolIndex}
+                          variant="caption"
+                          sx={{
+                            color: "rgba(255, 255, 255, 0.7)",
+                            backgroundColor: "rgba(255, 255, 255, 0.1)",
+                            padding: "4px 8px",
+                            borderRadius: "12px",
+                            fontSize: { xs: "0.65rem", sm: "0.75rem" },
+                            marginBottom: 1,
+                          }}
+                        >
+                          {tool}
+                        </Typography>
+                      ))}
+                    </Box>
+                  </Box>
+                </motion.div>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
       </Container>
     </Box>
   )
