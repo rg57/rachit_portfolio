@@ -29,7 +29,7 @@ const skills = [
 
 const categories = [
   {
-    title: "UI Design and Architecture",
+    title: "UI Design and Wireframes",
     level: 90,
     tools: ["Figma", "Sketch", "FigJam"],
   },
