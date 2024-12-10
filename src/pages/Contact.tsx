@@ -11,10 +11,12 @@ import {
   AccordionDetails,
 } from "@mui/material"
 import { motion } from "framer-motion"
-import { GitHub, LinkedIn, ExpandMore } from "@mui/icons-material"
+import { GitHub, LinkedIn, ExpandMore, Share } from "@mui/icons-material"
 import YouTubeIcon from "@mui/icons-material/YouTube"
 
 export default function Contact() {
+  const portfolioUrl = "https://rachit-portfolio-two.vercel.app/"
+
   const socialLinks = [
     { icon: <GitHub />, href: "https://github.com/rg57", label: "GitHub" },
     {
@@ -27,6 +29,38 @@ export default function Contact() {
       href: "https://www.youtube.com/@codeplaytech6467",
       label: "Twitter",
     },
+    // {
+    //   icon: <Share />,
+    //   href: portfolioUrl,
+    //   label: "Share",
+    //   onClick: (e: any) => {
+    //     e.preventDefault()
+    //     if (navigator.share) {
+    //       // Use the native share API if available
+    //       navigator
+    //         .share({
+    //           title: "Check out my portfolio",
+    //           text: "Explore my portfolio and projects!",
+    //           url: portfolioUrl,
+    //         })
+    //         .then(() => console.log("Thanks for sharing!"))
+    //         .catch((err) => console.error("Error sharing:", err))
+    //     } else if (navigator.clipboard) {
+    //       // Fallback to copying link to clipboard
+    //       navigator.clipboard
+    //         .writeText(portfolioUrl)
+    //         .then(() => alert("Portfolio link copied to clipboard!"))
+    //         .catch((err) =>
+    //           console.error("Failed to copy the portfolio link:", err)
+    //         )
+    //     } else {
+    //       // Absolute fallback: Notify users of manual sharing
+    //       alert(
+    //         "Sharing is not supported on your device. Please copy and share the link manually."
+    //       )
+    //     }
+    //   },
+    // },
   ]
 
   const faqItems = [
