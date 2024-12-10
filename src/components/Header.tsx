@@ -10,16 +10,23 @@ import {
   ListItem,
   ListItemText,
   Box,
+  ListItemIcon,
+  Typography,
 } from "@mui/material"
+import HomeIcon from "@mui/icons-material/Home"
+import WorkIcon from "@mui/icons-material/Work"
+import CodeIcon from "@mui/icons-material/Code"
+import PersonIcon from "@mui/icons-material/Person"
+import EmailIcon from "@mui/icons-material/Email"
 import MenuIcon from "@mui/icons-material/Menu"
 import Logo from "../assets/logo.png" // Replace with the path to your logo
 
 const navItems = [
-  { name: "Home", path: "/" },
-  { name: "Work", path: "/work" },
-  { name: "Skills", path: "/skills" },
-  { name: "About", path: "/about" },
-  { name: "Contact", path: "/contact" },
+  { name: "Home", path: "/", icon: <HomeIcon /> },
+  { name: "Work", path: "/work", icon: <WorkIcon /> },
+  { name: "Skills", path: "/skills", icon: <CodeIcon /> },
+  { name: "About", path: "/about", icon: <PersonIcon /> },
+  { name: "Contact", path: "/contact", icon: <EmailIcon /> },
 ]
 
 export default function Header() {
@@ -31,6 +38,15 @@ export default function Header() {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+      <Typography
+        variant="h6"
+        sx={{
+          fontWeight: "bold",
+          color: "#ffffff",
+        }}
+      >
+        RACHIT GUPTA
+      </Typography>
       <List>
         {navItems.map((item) => (
           <ListItem
@@ -43,6 +59,9 @@ export default function Header() {
               },
             }}
           >
+            <ListItemIcon sx={{ color: "#FF3366", minWidth: 40 }}>
+              {item.icon}
+            </ListItemIcon>
             <ListItemText
               primary={item.name}
               primaryTypographyProps={{
@@ -89,15 +108,6 @@ export default function Header() {
           >
             <img src={Logo} alt="Logo" style={{ height: 40, marginRight: 8 }} />
             {/* You can uncomment the text logo if needed */}
-            {/* <Typography
-              variant="h6"
-              sx={{
-                fontWeight: "bold",
-                color: "#ffffff", // Logo text color
-              }}
-            >
-              RACHIT GUPTA
-            </Typography> */}
           </Box>
 
           {/* Desktop Navigation */}
@@ -114,7 +124,7 @@ export default function Header() {
                   textTransform: "none",
                   fontWeight: 700,
                   "&:hover": {
-                    backgroundColor: "#2e305e", // Hover background color
+                    backgroundColor: "#FF3366", // Hover background color
                   },
                 }}
               >
@@ -148,8 +158,11 @@ export default function Header() {
           display: { xs: "block", sm: "none" },
           "& .MuiDrawer-paper": {
             boxSizing: "border-box",
-            width: 240,
-            backgroundColor: "#1b1d3a", // Dark background for mobile drawer
+            width: 280,
+            backgroundColor: "#1b1d3a",
+            backgroundImage:
+              "linear-gradient(135deg, #2A0845 0%, #6441A5 100%)",
+            padding: 2,
           },
         }}
       >
