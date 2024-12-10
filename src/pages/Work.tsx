@@ -24,6 +24,28 @@ import { Close as CloseIcon } from "@mui/icons-material"
 import { motion, AnimatePresence } from "framer-motion"
 import dscc1 from "../assets/dsccscreenshot1.png"
 import dscc2 from "../assets/dsccscreenshot2.png"
+import instafood1 from "../assets/instafood1.png"
+import instafood2 from "../assets/instafood2.png"
+import instafood3 from "../assets/instafood3.png"
+import instafood4 from "../assets/instafood4.png"
+import instafood5 from "../assets/instafood5.png"
+import instafoodcover from "../assets/instafoodcover.png"
+import nirman1 from "../assets/nirman1.png"
+import nirman2 from "../assets/nirman2.png"
+import nirman3 from "../assets/nirman3.png"
+import nirman4 from "../assets/nirman4.png"
+import nirman5 from "../assets/nirman5.png"
+import nirmanlogo from "../assets/nirmanlogo.png"
+import teslogo from "../assets/teslogo.png"
+import nabslogo from "../assets/nabslogo.jpeg"
+import nabsadmin1 from "../assets/nabsadmin1.png"
+import nabsadmin2 from "../assets/nabsadmin2.png"
+import nabsvendor1 from "../assets/nabsvendor1.png"
+import nabsvendor2 from "../assets/nabsvendor2.png"
+import nabsvendor3 from "../assets/nabsvendor3.png"
+import nabscustomer1 from "../assets/nabscustomer1.png"
+import nabscustomer2 from "../assets/nabscustomer2.png"
+import nabscustomer3 from "../assets/nabscustomer3.png"
 
 interface Project {
   title: string
@@ -52,56 +74,10 @@ const projects: Project[] = [
     screenshots: [dscc1, dscc2],
   },
   {
-    title: "InstaFood",
-    description:
-      "A React Native mobile app for food ordering and delivery, using Firebase for backend services.",
-    image: "/placeholder.svg?height=200&width=300",
-    skills: ["React Native", "Firebase", "Serverless Architecture"],
-    link: "https://github.com/rg57/InstaFood.git",
-    details: [
-      "Comprehensive food ordering and delivery solution built for a client in the food sector.",
-      "Leverages React Native for the frontend and Firebase for backend services, embracing a serverless architecture.",
-      "Order management system for customers to browse menus, place orders, and track deliveries.",
-      "User profiles for personalized experiences and order history.",
-      "Admin app for restaurant owners to manage product listings, pricing, and inventory.",
-      "Demonstrates ability to create efficient, scalable mobile solutions using modern technologies and architectures.",
-    ],
-
-    screenshots: [
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-    ],
-  },
-  {
-    title: "Nirman App",
-    description:
-      "A React Native app for DS Constructions company, facilitating project updates and document management.",
-    image: "/placeholder.svg?height=200&width=300",
-    skills: ["React Native", "PDF Generation", "File Management"],
-    link: "https://github.com/rg57/nirman_RN0.71_Updated.git",
-    details: [
-      "Custom solution for DS Constructions company's internal team.",
-      "Real-time project updates and status tracking.",
-      "Access to project drawings and architectural plans.",
-      "Architect assignment and management.",
-      "PDF generation for current process stage reports.",
-    ],
-    screenshots: [
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-    ],
-  },
-  {
     title: "NABS CRM",
     description:
       "A comprehensive enterprise solution for Next Age Building Solutions, featuring mobile apps and a web dashboard.",
-    image: "/placeholder.svg?height=200&width=300",
+    image: nabslogo,
     skills: [
       "React Native",
       "React.js",
@@ -119,13 +95,51 @@ const projects: Project[] = [
       "Key modules include survey handling, comprehensive reporting, order management, and AMC management.",
     ],
     screenshots: [
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
+      nabsadmin1,
+      nabsadmin2,
+      nabscustomer1,
+      nabscustomer2,
+      nabscustomer3,
+      nabsvendor1,
+      nabsvendor2,
+      nabsvendor3,
     ],
   },
+  {
+    title: "InstaFood",
+    description:
+      "A React Native mobile app for food ordering and delivery, using Firebase for backend services.",
+    image: instafoodcover,
+    skills: ["React Native", "Firebase", "Serverless Architecture"],
+    link: "https://github.com/rg57/InstaFood.git",
+    details: [
+      "Comprehensive food ordering and delivery solution built for a client in the food sector.",
+      "Leverages React Native for the frontend and Firebase for backend services, embracing a serverless architecture.",
+      "Order management system for customers to browse menus, place orders, and track deliveries.",
+      "User profiles for personalized experiences and order history.",
+      "Admin app for restaurant owners to manage product listings, pricing, and inventory.",
+      "Demonstrates ability to create efficient, scalable mobile solutions using modern technologies and architectures.",
+    ],
+
+    screenshots: [instafood1, instafood2, instafood3, instafood4, instafood5],
+  },
+  {
+    title: "Nirman App",
+    description:
+      "A React Native app for DS Constructions company, facilitating project updates and document management.",
+    image: nirmanlogo,
+    skills: ["React Native", "PDF Generation", "File Management"],
+    link: "https://github.com/rg57/nirman_RN0.71_Updated.git",
+    details: [
+      "Custom solution for DS Constructions company's internal team.",
+      "Real-time project updates and status tracking.",
+      "Access to project drawings and architectural plans.",
+      "Architect assignment and management.",
+      "PDF generation for current process stage reports.",
+    ],
+    screenshots: [nirman1, nirman2, nirman3, nirman4, nirman5],
+  },
+
   {
     title: "Ticketing Tool",
     description:
@@ -141,36 +155,24 @@ const projects: Project[] = [
       "Showcases ability to create a cohesive ecosystem of applications that work together to solve complex business problems.",
     ],
 
-    screenshots: [
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-    ],
+    screenshots: [],
   },
 
   {
     title: "TES Market",
     description:
       "Developed frontend components for a stock market platform using React.js and integrated with Alpaca Market API.",
-    image: "/placeholder.svg?height=200&width=300",
+    image: teslogo,
     skills: ["React.js", "API Integration", "Financial Systems"],
-    link: "#",
+    link: "http://theelsystem.com/",
     details: [
-      "Created user interfaces for both client and admin user types.",
+      "Modify user interfaces for both client and admin user types.",
       "Implemented a wallet system for managing user funds.",
       "Developed buy and sell modules for stock transactions.",
       "Designed various pages to enhance user experience.",
       "Integrated with the Alpaca Market API for real-time stock data.",
     ],
-    screenshots: [
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-    ],
+    screenshots: [],
   },
 ]
 
@@ -269,6 +271,10 @@ export default function Work(): JSX.Element {
                     image={project.image}
                     alt={project.title}
                     sx={{ borderRadius: "20px 20px 0 0" }}
+                    style={{
+                      backgroundColor: "#fff",
+                      objectFit: "fill",
+                    }}
                   />
                   <CardContent
                     sx={{
@@ -418,7 +424,7 @@ export default function Work(): JSX.Element {
                 <ImageList
                   // sx={{ width: 500, height: 450 }}
                   cols={3}
-                  rowHeight={164}
+                  rowHeight={200}
                   sx={{ justifyContent: "space-around", mt: 2 }}
                 >
                   {selectedProject.screenshots.map((item) => (
@@ -429,6 +435,11 @@ export default function Work(): JSX.Element {
                         alt={item}
                         onClick={() => handleOpen(item)}
                         loading="lazy"
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "contain",
+                        }}
                       />
                     </ImageListItem>
                   ))}
@@ -456,7 +467,6 @@ export default function Work(): JSX.Element {
       </AnimatePresence>
       <Dialog open={open} onClose={handleClose} maxWidth={"lg"} fullWidth>
         <img src={currentImage} alt="full Dialog:" />
-        {/* For actual app display add optional default */}
       </Dialog>
     </Box>
   )
