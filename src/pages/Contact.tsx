@@ -60,7 +60,7 @@ export default function Contact() {
     //   },
     // },
   ]
-
+  console.log("hello world")
   const faqItems = [
     {
       question: "Who are Full Stack software developer?",
