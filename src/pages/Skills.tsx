@@ -26,6 +26,7 @@ import {
   SiFlutter,
   SiFirebase,
 } from "react-icons/si"
+import { TbBrandRedux } from "react-icons/tb"
 import { AiOutlineApi } from "react-icons/ai"
 
 const skills = [
@@ -44,6 +45,7 @@ const skills = [
   { name: "Flutter", level: 8, icon: SiFlutter },
   { name: "Firebase", level: 9, icon: SiFirebase },
   { name: "Java", level: 10, icon: FaJava },
+  { name: "Redux", level: 8, icon: TbBrandRedux },
   { name: "Python", level: 8, icon: FaPython },
 ]
 
