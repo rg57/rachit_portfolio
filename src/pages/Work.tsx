@@ -173,6 +173,22 @@ const projects: Project[] = [
     ],
     screenshots: [],
   },
+  {
+    title: "RN Enterprises - Official Portfolio Website",
+    description:
+      "Designed and developed the official portfolio website for RN Enterprises, showcasing their product range and company profile with a clean and responsive design.",
+    image: "/placeholder.svg?height=200&width=300",
+    skills: ["React.js", "MUI", "UI/UX Design", "Responsive Web Design"],
+    link: "https://rnent.in",
+    details: [
+      "Developed using React.js for dynamic rendering and modular architecture.",
+      "Styled the entire UI using MUI (Material UI) for a professional and cohesive look.",
+      "Showcased company overview, mission, vision, and product offerings effectively.",
+      "Implemented a fully responsive layout compatible with all modern devices.",
+      "Optimized performance and accessibility for a smooth user experience.",
+    ],
+    screenshots: [],
+  },
 ]
 
 export default function Work(): JSX.Element {
