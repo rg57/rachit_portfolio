@@ -123,6 +123,22 @@ const projects: Project[] = [
     screenshots: [instafood1, instafood2, instafood3, instafood4, instafood5],
   },
   {
+    title: "RN Enterprises - Official Portfolio Website",
+    description:
+      "Designed and developed the official portfolio website for RN Enterprises, showcasing their product range and company profile with a clean and responsive design.",
+    image: "/placeholder.svg?height=200&width=300",
+    skills: ["React.js", "MUI", "UI/UX Design", "Responsive Web Design"],
+    link: "https://rnent.in",
+    details: [
+      "Developed using React.js for dynamic rendering and modular architecture.",
+      "Styled the entire UI using MUI (Material UI) for a professional and cohesive look.",
+      "Showcased company overview, mission, vision, and product offerings effectively.",
+      "Implemented a fully responsive layout compatible with all modern devices.",
+      "Optimized performance and accessibility for a smooth user experience.",
+    ],
+    screenshots: [],
+  },
+  {
     title: "Nirman App",
     description:
       "A React Native app for DS Constructions company, facilitating project updates and document management.",
@@ -170,22 +186,6 @@ const projects: Project[] = [
       "Developed buy and sell modules for stock transactions.",
       "Designed various pages to enhance user experience.",
       "Integrated with the Alpaca Market API for real-time stock data.",
-    ],
-    screenshots: [],
-  },
-  {
-    title: "RN Enterprises - Official Portfolio Website",
-    description:
-      "Designed and developed the official portfolio website for RN Enterprises, showcasing their product range and company profile with a clean and responsive design.",
-    image: "/placeholder.svg?height=200&width=300",
-    skills: ["React.js", "MUI", "UI/UX Design", "Responsive Web Design"],
-    link: "https://rnent.in",
-    details: [
-      "Developed using React.js for dynamic rendering and modular architecture.",
-      "Styled the entire UI using MUI (Material UI) for a professional and cohesive look.",
-      "Showcased company overview, mission, vision, and product offerings effectively.",
-      "Implemented a fully responsive layout compatible with all modern devices.",
-      "Optimized performance and accessibility for a smooth user experience.",
     ],
     screenshots: [],
   },
