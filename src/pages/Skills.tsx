@@ -78,14 +78,14 @@ const capabilities = [
     title: "Backend & APIs",
     description:
       "Application logic, REST APIs, authentication, integrations and backend services for connected business applications.",
-    tools: ["Spring Boot", "Node.js", "Java", "REST APIs"],
+    tools: ["Spring Boot", "Node.js", "Java", "REST APIs", "Fast API"],
   },
   {
     icon: <Storage />,
     title: "Data & Persistence",
     description:
       "Relational, document and cloud-backed data models for operational software and customer-facing products.",
-    tools: ["MySQL", "MongoDB", "Firebase"],
+    tools: ["MySQL", "MongoDB", "Firebase", "Postgres"],
   },
   {
     icon: <Cloud />,
@@ -144,7 +144,13 @@ const categories = [
     level: 88,
     description:
       "Translating real business processes into practical workflows, modules and software requirements.",
-    tools: ["Workflow Mapping", "CRM", "Inventory", "Field Sales", "Operations"],
+    tools: [
+      "Workflow Mapping",
+      "CRM",
+      "Inventory",
+      "Field Sales",
+      "Operations",
+    ],
   },
 ]
 
@@ -281,10 +287,7 @@ export default function Skills() {
                       {item.icon}
                     </Box>
 
-                    <Typography
-                      variant="h5"
-                      sx={{ fontWeight: 800, mb: 1.2 }}
-                    >
+                    <Typography variant="h5" sx={{ fontWeight: 800, mb: 1.2 }}>
                       {item.title}
                     </Typography>
 
@@ -538,10 +541,7 @@ export default function Skills() {
                         mb: 1,
                       }}
                     >
-                      <Typography
-                        variant="h6"
-                        sx={{ fontWeight: 800 }}
-                      >
+                      <Typography variant="h6" sx={{ fontWeight: 800 }}>
                         {category.title}
                       </Typography>
 
@@ -641,8 +641,8 @@ export default function Skills() {
           >
             I am comfortable working across frontend, mobile, backend, databases
             and deployment, but I do not start a project by choosing technology.
-            I start by understanding the users, workflow and business objective —
-            then choose the architecture that fits.
+            I start by understanding the users, workflow and business objective
+            — then choose the architecture that fits.
           </Typography>
         </Box>
       </Container>
