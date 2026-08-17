@@ -12,10 +12,12 @@ import {
   GitHub,
   LinkedIn,
   YouTube,
-  Code,
-  Build,
+  BusinessCenter,
   Devices,
   Storage,
+  Insights,
+  ArrowForward,
+  CheckCircleOutline,
 } from "@mui/icons-material"
 import { motion } from "framer-motion"
 import { Link as RouterLink } from "react-router-dom"
@@ -42,18 +44,26 @@ export default function About() {
   const skills = [
     "JavaScript",
     "React",
-    "Node.js",
-    "Python",
-    "AWS",
-    "Spring-Boot",
-    "Firebase",
     "React Native",
+    "Node.js",
+    "Spring Boot",
+    "Firebase",
+    "MySQL",
+    "MongoDB",
+    "AWS",
+    "EC2",
+    "Python",
     "Flutter",
     "GraphQL",
-    "MongoDB",
-    "EC2",
     "Figma",
-    "Architecture",
+    "System Architecture",
+  ]
+
+  const experiencePoints = [
+    "Custom CRM and internal business applications",
+    "Mobile apps for field teams and customers",
+    "Inventory, sales, purchase and operational workflows",
+    "Admin dashboards, APIs and backend systems",
   ]
 
   const fadeIn = {
@@ -65,7 +75,7 @@ export default function About() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { delayChildren: 0.3, staggerChildren: 0.2 },
+      transition: { delayChildren: 0.2, staggerChildren: 0.14 },
     },
   }
 
@@ -74,259 +84,449 @@ export default function About() {
       sx={{
         position: "relative",
         minHeight: "100vh",
-        backgroundImage: "url('/file-QAR9bo8c6W3f84TAILrPqyml')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
         color: "white",
-        textAlign: "center",
+        background:
+          "radial-gradient(circle at 82% 12%, rgba(255,51,102,0.13), transparent 28%), linear-gradient(135deg, #24073E 0%, #351052 50%, #4A1D6A 100%)",
         padding: { xs: "1rem", sm: "1.5rem", md: "2rem" },
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        mt: {
-          xs: 10,
-        },
+        mt: { xs: 8 },
+        pb: { xs: 8, md: 10 },
       }}
     >
       <Container
         maxWidth="lg"
-        sx={{ zIndex: 1, textAlign: "center", px: { xs: 2, sm: 3, md: 4 } }}
+        sx={{
+          zIndex: 1,
+          px: { xs: 2, sm: 3, md: 4 },
+          pt: { xs: 6, md: 8 },
+        }}
       >
         <motion.div
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
         >
-          {/* Title Section */}
+          {/* HERO */}
           <motion.div variants={fadeIn}>
-            <Typography
-              variant="h1"
-              sx={{
-                fontSize: {
-                  xs: "2rem",
-                  sm: "2.5rem",
-                  md: "3.5rem",
-                  lg: "4rem",
-                },
-                fontWeight: "bold",
-                mb: { xs: 2, sm: 3, md: 4 },
-                lineHeight: 1.2,
-              }}
-            >
-              I'm Rachit, a Full Stack Developer
-            </Typography>
-          </motion.div>
-          <motion.div variants={fadeIn}>
-            <Typography
-              variant="h6"
-              sx={{
-                color: "rgba(255, 255, 255, 0.8)",
-                fontSize: { xs: "0.9rem", sm: "1rem", md: "1.25rem" },
-                mb: { xs: 3, sm: 4 },
-                lineHeight: 1.6,
-              }}
-            >
-              With 5 years of experience, I craft innovative web and mobile
-              solutions that drive business growth and enhance user experiences.
-            </Typography>
-          </motion.div>
-          <motion.div variants={fadeIn}>
-            <Button
-              variant="contained"
-              component={RouterLink}
-              to="/work"
-              sx={{
-                backgroundColor: "#FF3366",
-                color: "white",
-                "&:hover": { backgroundColor: "#E62E5C" },
-                mb: 2,
-                mr: 2,
-              }}
-              href="#portfolio"
-            >
-              View My Projects
-            </Button>
-            <Button
-              component={RouterLink}
-              to="/contact"
+            <Chip
+              label="About Me"
               variant="outlined"
               sx={{
                 color: "white",
-                borderColor: "white",
-                "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.1)" },
-                mb: 2,
+                borderColor: "rgba(255,51,102,0.62)",
+                bgcolor: "rgba(255,51,102,0.08)",
+                fontWeight: 700,
+                mb: 3,
               }}
-              // href="#contact"
+            />
+
+            <Typography
+              variant="h1"
+              sx={{
+                maxWidth: 930,
+                fontSize: {
+                  xs: "2.45rem",
+                  sm: "3.35rem",
+                  md: "4.35rem",
+                },
+                fontWeight: 800,
+                lineHeight: 1.05,
+                letterSpacing: "-0.045em",
+              }}
             >
-              Get in Touch
-            </Button>
+              I understand both{" "}
+              <Box component="span" sx={{ color: "#FF3366" }}>
+                software
+              </Box>{" "}
+              and the business behind it.
+            </Typography>
           </motion.div>
 
-          {/* Skills Section */}
           <motion.div variants={fadeIn}>
-            <Box sx={{ mt: 4, mb: 6 }}>
-              <Typography variant="h6" sx={{ mb: 2, color: "#FF3366" }}>
-                My Tech Stack
-              </Typography>
-              <Box
+            <Typography
+              sx={{
+                maxWidth: 820,
+                mt: 3,
+                color: "rgba(255,255,255,0.72)",
+                fontSize: { xs: "1rem", md: "1.18rem" },
+                lineHeight: 1.8,
+              }}
+            >
+              I am a full-stack developer focused on building practical business
+              software — CRM systems, internal dashboards, mobile applications,
+              inventory workflows and operational tools designed around how a
+              company actually works.
+            </Typography>
+          </motion.div>
+
+          <motion.div variants={fadeIn}>
+            <Box
+              sx={{
+                display: "flex",
+                gap: 1.5,
+                flexWrap: "wrap",
+                mt: 4,
+              }}
+            >
+              <Button
+                variant="contained"
+                component={RouterLink}
+                to="/work"
+                endIcon={<ArrowForward />}
                 sx={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  justifyContent: "center",
-                  gap: 1,
+                  backgroundColor: "#FF3366",
+                  color: "white",
+                  px: 3,
+                  py: 1.2,
+                  borderRadius: 7,
+                  textTransform: "none",
+                  fontWeight: 800,
+                  "&:hover": { backgroundColor: "#E62E5C" },
                 }}
               >
-                {skills.map((skill) => (
-                  <Chip
-                    key={skill}
-                    label={skill}
-                    sx={{
-                      backgroundColor: "rgba(255, 255, 255, 0.1)",
-                      color: "white",
-                      "&:hover": { backgroundColor: "rgba(255, 51, 102, 0.2)" },
-                    }}
-                  />
-                ))}
-              </Box>
+                View My Work
+              </Button>
+
+              <Button
+                component={RouterLink}
+                to="/contact"
+                variant="outlined"
+                sx={{
+                  color: "white",
+                  borderColor: "rgba(255,255,255,0.42)",
+                  px: 3,
+                  py: 1.2,
+                  borderRadius: 7,
+                  textTransform: "none",
+                  fontWeight: 800,
+                  "&:hover": {
+                    borderColor: "white",
+                    backgroundColor: "rgba(255,255,255,0.06)",
+                  },
+                }}
+              >
+                Discuss a Project
+              </Button>
             </Box>
           </motion.div>
 
-          {/* Grid Section */}
-          <Grid container spacing={{ xs: 4, md: 6 }} sx={{ textAlign: "left" }}>
-            {/* About Me */}
-            <Grid item xs={12} md={6}>
-              <motion.div variants={fadeIn}>
-                <Box>
+          {/* STORY */}
+          <Grid
+            container
+            spacing={{ xs: 3, md: 4 }}
+            sx={{ mt: { xs: 6, md: 8 } }}
+          >
+            <Grid item xs={12} md={7}>
+              <motion.div variants={fadeIn} style={{ height: "100%" }}>
+                <Box
+                  sx={{
+                    height: "100%",
+                    p: { xs: 3, md: 4 },
+                    borderRadius: 5,
+                    bgcolor: "rgba(18,6,32,0.42)",
+                    border: "1px solid rgba(255,255,255,0.12)",
+                    backdropFilter: "blur(14px)",
+                  }}
+                >
                   <Typography
-                    variant="h5"
+                    variant="overline"
                     sx={{
                       color: "#FF3366",
-                      fontWeight: "bold",
-                      mb: { xs: 2, sm: 3 },
+                      fontWeight: 800,
+                      letterSpacing: "0.14em",
                     }}
                   >
-                    ABOUT ME
+                    My Journey
                   </Typography>
+
                   <Typography
-                    variant="body1"
+                    variant="h4"
                     sx={{
-                      color: "rgba(255, 255, 255, 0.8)",
-                      lineHeight: 1.8,
-                      mb: 2,
+                      fontWeight: 800,
+                      mt: 1,
+                      mb: 2.5,
+                      lineHeight: 1.2,
                     }}
                   >
-                    As a passionate Full Stack Developer, I thrive on turning
-                    complex problems into elegant, efficient solutions. My
-                    journey in tech has equipped me with a diverse skill set and
-                    a keen eye for detail, allowing me to create seamless,
-                    user-centric applications that make a real impact.
+                    From writing code to understanding operations.
                   </Typography>
-                  {/* <Button
-                    variant="text"
+
+                  <Typography
                     sx={{
-                      color: "#FF3366",
-                      textTransform: "none",
-                      "&:hover": { textDecoration: "underline" },
+                      color: "rgba(255,255,255,0.76)",
+                      lineHeight: 1.85,
+                      mb: 2.5,
                     }}
-                    href="/about"
                   >
-                    Learn More About My Journey →
-                  </Button> */}
+                    My experience began with full-stack and mobile development,
+                    where I worked on real client requirements and built custom
+                    applications for business use. That experience taught me that
+                    the hardest part of a software project is often not the code —
+                    it is understanding the process behind it.
+                  </Typography>
+
+                  <Typography
+                    sx={{
+                      color: "rgba(255,255,255,0.76)",
+                      lineHeight: 1.85,
+                      mb: 2.5,
+                    }}
+                  >
+                    Working closely with a construction business gave me direct
+                    experience building technology around company workflows,
+                    field activity and operational requirements rather than
+                    generic product ideas.
+                  </Typography>
+
+                  <Typography
+                    sx={{
+                      color: "rgba(255,255,255,0.76)",
+                      lineHeight: 1.85,
+                    }}
+                  >
+                    Today, I also work directly inside an FMCG business. That has
+                    given me firsthand exposure to inventory, purchases, sales,
+                    customers, distributors, field teams, payments and everyday
+                    business decisions. I use that operational understanding when
+                    I design software — so the system fits the business instead of
+                    forcing the business to fit the software.
+                  </Typography>
                 </Box>
               </motion.div>
             </Grid>
 
-            {/* My Work */}
-            <Grid item xs={12} md={6}>
-              <motion.div variants={fadeIn}>
-                <Box>
+            <Grid item xs={12} md={5}>
+              <motion.div variants={fadeIn} style={{ height: "100%" }}>
+                <Box
+                  sx={{
+                    height: "100%",
+                    p: { xs: 3, md: 4 },
+                    borderRadius: 5,
+                    bgcolor: "rgba(255,51,102,0.08)",
+                    border: "1px solid rgba(255,51,102,0.24)",
+                  }}
+                >
                   <Typography
-                    variant="h5"
-                    sx={{ color: "#FF3366", fontWeight: "bold", mb: 2 }}
-                  >
-                    MY WORK
-                  </Typography>
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      color: "rgba(255, 255, 255, 0.8)",
-                      lineHeight: 1.8,
-                      mb: 2,
-                    }}
-                  >
-                    From developing robust CRM systems to creating intuitive
-                    mobile apps, my portfolio showcases a range of projects that
-                    demonstrate my technical expertise and creative
-                    problem-solving skills. Each project is a testament to my
-                    commitment to delivering high-quality, scalable solutions.
-                  </Typography>
-                  {/* <Button
-                    variant="text"
+                    variant="overline"
                     sx={{
                       color: "#FF3366",
-                      textTransform: "none",
-                      "&:hover": { textDecoration: "underline" },
+                      fontWeight: 800,
+                      letterSpacing: "0.14em",
                     }}
-                    href="/portfolio"
                   >
-                    Explore My Portfolio →
-                  </Button> */}
+                    What I Bring
+                  </Typography>
+
+                  <Typography
+                    variant="h5"
+                    sx={{ fontWeight: 800, mt: 1, mb: 3 }}
+                  >
+                    Technical execution with business context.
+                  </Typography>
+
+                  <Box sx={{ display: "grid", gap: 1.7 }}>
+                    {experiencePoints.map((item) => (
+                      <Box
+                        key={item}
+                        sx={{
+                          display: "flex",
+                          gap: 1.3,
+                          alignItems: "flex-start",
+                        }}
+                      >
+                        <CheckCircleOutline
+                          sx={{
+                            color: "#FF3366",
+                            fontSize: 20,
+                            mt: "2px",
+                            flexShrink: 0,
+                          }}
+                        />
+                        <Typography
+                          sx={{
+                            color: "rgba(255,255,255,0.8)",
+                            lineHeight: 1.65,
+                          }}
+                        >
+                          {item}
+                        </Typography>
+                      </Box>
+                    ))}
+                  </Box>
                 </Box>
               </motion.div>
             </Grid>
           </Grid>
 
-          {/* Services Section */}
+          {/* BUSINESS + DEVELOPMENT */}
           <motion.div variants={fadeIn}>
-            <Box sx={{ mt: 6, mb: 4 }}>
+            <Box sx={{ mt: { xs: 7, md: 9 } }}>
               <Typography
-                variant="h5"
-                sx={{ color: "#FF3366", fontWeight: "bold", mb: 3 }}
+                variant="overline"
+                sx={{
+                  color: "#FF3366",
+                  fontWeight: 800,
+                  letterSpacing: "0.14em",
+                }}
               >
-                SERVICES I OFFER
+                My Perspective
               </Typography>
-              <Grid container spacing={2}>
+
+              <Typography
+                variant="h3"
+                sx={{
+                  fontWeight: 800,
+                  mt: 0.5,
+                  mb: 4,
+                  fontSize: { xs: "2rem", md: "2.8rem" },
+                }}
+              >
+                Why business experience matters when building software.
+              </Typography>
+
+              <Grid container spacing={3}>
                 {[
                   {
-                    icon: <Code />,
-                    title: "Web Development",
-                    desc: "Custom websites and web applications",
+                    icon: <BusinessCenter />,
+                    title: "I understand the workflow",
+                    desc: "Before proposing features, I look at how work currently moves through the business — people, data, approvals, follow-ups and decisions.",
+                  },
+                  {
+                    icon: <Insights />,
+                    title: "I focus on the useful data",
+                    desc: "A good system should make decisions easier. I think about what owners, managers and teams actually need to see and act on.",
                   },
                   {
                     icon: <Devices />,
-                    title: "Mobile App Development",
-                    desc: "Cross-platform mobile solutions",
+                    title: "I design for the people using it",
+                    desc: "Office dashboards and field applications have very different needs. I build interfaces around the user and the context in which they work.",
                   },
-                  {
-                    icon: <Build />,
-                    title: "API Development",
-                    desc: "Robust and scalable API architectures",
-                  },
-
                   {
                     icon: <Storage />,
-                    title: "Enterprise Solutions",
-                    desc: "CRM and ERP Software Services",
+                    title: "I build connected systems",
+                    desc: "Frontend, mobile, backend, databases and APIs are planned as one operational system instead of a collection of disconnected features.",
                   },
-                ].map((service, index) => (
-                  <Grid item xs={12} sm={6} md={3} key={index}>
+                ].map((item) => (
+                  <Grid item xs={12} sm={6} key={item.title}>
                     <Box
                       sx={{
-                        p: 2,
                         height: "100%",
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                        textAlign: "center",
+                        p: 3,
+                        borderRadius: 4,
+                        bgcolor: "rgba(18,6,32,0.38)",
+                        border: "1px solid rgba(255,255,255,0.10)",
                       }}
                     >
-                      {service.icon}
-                      <Typography variant="h6" sx={{ my: 1, color: "white" }}>
+                      <Box
+                        sx={{
+                          width: 48,
+                          height: 48,
+                          borderRadius: 3,
+                          bgcolor: "rgba(255,51,102,0.12)",
+                          color: "#FF3366",
+                          display: "grid",
+                          placeItems: "center",
+                          mb: 2,
+                        }}
+                      >
+                        {item.icon}
+                      </Box>
+
+                      <Typography
+                        variant="h6"
+                        sx={{ fontWeight: 800, mb: 1 }}
+                      >
+                        {item.title}
+                      </Typography>
+
+                      <Typography
+                        sx={{
+                          color: "rgba(255,255,255,0.68)",
+                          lineHeight: 1.7,
+                        }}
+                      >
+                        {item.desc}
+                      </Typography>
+                    </Box>
+                  </Grid>
+                ))}
+              </Grid>
+            </Box>
+          </motion.div>
+
+          {/* SERVICES */}
+          <motion.div variants={fadeIn}>
+            <Box sx={{ mt: { xs: 7, md: 9 } }}>
+              <Typography
+                variant="overline"
+                sx={{
+                  color: "#FF3366",
+                  fontWeight: 800,
+                  letterSpacing: "0.14em",
+                }}
+              >
+                What I Build
+              </Typography>
+
+              <Typography
+                variant="h3"
+                sx={{
+                  fontWeight: 800,
+                  mt: 0.5,
+                  mb: 4,
+                  fontSize: { xs: "2rem", md: "2.8rem" },
+                }}
+              >
+                Software for real business operations.
+              </Typography>
+
+              <Grid container spacing={2.5}>
+                {[
+                  {
+                    title: "CRM & Customer Systems",
+                    desc: "Customer records, leads, follow-ups, orders, payments and relationship workflows.",
+                  },
+                  {
+                    title: "ERP & Internal Tools",
+                    desc: "Custom business systems for products, purchases, expenses, operations and reporting.",
+                  },
+                  {
+                    title: "Field Sales Applications",
+                    desc: "Mobile workflows for sales teams, visits, retailers, orders, attendance and collections.",
+                  },
+                  {
+                    title: "Inventory & Distribution",
+                    desc: "Stock, SKUs, purchases, movement, distributors and operational inventory visibility.",
+                  },
+                  {
+                    title: "Business Dashboards",
+                    desc: "Management interfaces that turn scattered operational information into useful decisions.",
+                  },
+                  {
+                    title: "Custom Mobile Apps",
+                    desc: "Android and iOS applications designed around a specific company workflow or customer journey.",
+                  },
+                ].map((service) => (
+                  <Grid item xs={12} sm={6} md={4} key={service.title}>
+                    <Box
+                      sx={{
+                        height: "100%",
+                        p: 3,
+                        borderRadius: 4,
+                        bgcolor: "rgba(255,255,255,0.04)",
+                        border: "1px solid rgba(255,255,255,0.10)",
+                      }}
+                    >
+                      <Typography
+                        variant="h6"
+                        sx={{ fontWeight: 800, color: "white", mb: 1 }}
+                      >
                         {service.title}
                       </Typography>
                       <Typography
-                        variant="body2"
-                        sx={{ color: "rgba(255, 255, 255, 0.7)" }}
+                        sx={{
+                          color: "rgba(255,255,255,0.68)",
+                          lineHeight: 1.7,
+                        }}
                       >
                         {service.desc}
                       </Typography>
@@ -337,19 +537,106 @@ export default function About() {
             </Box>
           </motion.div>
 
-          {/* Social Links */}
-          <Box sx={{ mt: 4 }}>
-            <motion.div variants={fadeIn}>
+          {/* TECH STACK */}
+          <motion.div variants={fadeIn}>
+            <Box
+              sx={{
+                mt: { xs: 7, md: 9 },
+                p: { xs: 3, md: 4 },
+                borderRadius: 5,
+                bgcolor: "rgba(18,6,32,0.38)",
+                border: "1px solid rgba(255,255,255,0.10)",
+              }}
+            >
+              <Typography
+                variant="overline"
+                sx={{
+                  color: "#FF3366",
+                  fontWeight: 800,
+                  letterSpacing: "0.14em",
+                }}
+              >
+                Technology
+              </Typography>
+
+              <Typography
+                variant="h4"
+                sx={{
+                  fontWeight: 800,
+                  mt: 0.5,
+                  mb: 1.5,
+                }}
+              >
+                The tools behind the solutions.
+              </Typography>
+
+              <Typography
+                sx={{
+                  color: "rgba(255,255,255,0.68)",
+                  maxWidth: 720,
+                  mb: 3,
+                  lineHeight: 1.7,
+                }}
+              >
+                I choose technology based on the product and business
+                requirements. My core experience spans modern web, mobile,
+                backend and cloud development.
+              </Typography>
+
+              <Box
+                sx={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: 1,
+                }}
+              >
+                {skills.map((skill) => (
+                  <Chip
+                    key={skill}
+                    label={skill}
+                    sx={{
+                      backgroundColor: "rgba(255,255,255,0.07)",
+                      border: "1px solid rgba(255,255,255,0.10)",
+                      color: "white",
+                      "&:hover": {
+                        backgroundColor: "rgba(255,51,102,0.14)",
+                      },
+                    }}
+                  />
+                ))}
+              </Box>
+            </Box>
+          </motion.div>
+
+          {/* SOCIAL LINKS */}
+          <motion.div variants={fadeIn}>
+            <Box
+              sx={{
+                mt: { xs: 7, md: 9 },
+                textAlign: "center",
+              }}
+            >
               <Typography
                 variant="h6"
-                sx={{ color: "#FF3366", fontWeight: "bold", mb: 2 }}
+                sx={{
+                  color: "#FF3366",
+                  fontWeight: 800,
+                  mb: 2,
+                }}
               >
-                LET'S CONNECT
+                LET&apos;S CONNECT
               </Typography>
-              <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
-                {socialLinks.map((social, index) => (
+
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  gap: 2,
+                }}
+              >
+                {socialLinks.map((social) => (
                   <IconButton
-                    key={index}
+                    key={social.label}
                     component={Link}
                     href={social.href}
                     target="_blank"
@@ -357,9 +644,9 @@ export default function About() {
                     aria-label={social.label}
                     sx={{
                       color: "white",
-                      border: "1px solid rgba(255, 255, 255, 0.2)",
+                      border: "1px solid rgba(255,255,255,0.20)",
                       "&:hover": {
-                        backgroundColor: "rgba(255, 51, 102, 0.1)",
+                        backgroundColor: "rgba(255,51,102,0.10)",
                         borderColor: "#FF3366",
                       },
                     }}
@@ -368,27 +655,63 @@ export default function About() {
                   </IconButton>
                 ))}
               </Box>
-            </motion.div>
-          </Box>
+            </Box>
+          </motion.div>
 
-          {/* Call to Action */}
+          {/* FINAL CTA */}
           <motion.div variants={fadeIn}>
-            <Box sx={{ mt: 6 }}>
-              <Typography variant="h5" sx={{ color: "white", mb: 2 }}>
-                Ready to start your next project?
-              </Typography>
-              <Button
-                variant="contained"
+            <Box
+              sx={{
+                mt: { xs: 7, md: 9 },
+                textAlign: "center",
+                p: { xs: 4, md: 6 },
+                borderRadius: 5,
+                bgcolor: "rgba(255,51,102,0.08)",
+                border: "1px solid rgba(255,51,102,0.23)",
+              }}
+            >
+              <Typography
+                variant="h3"
                 sx={{
+                  fontWeight: 800,
+                  fontSize: { xs: "2rem", md: "2.8rem" },
+                  mb: 2,
+                }}
+              >
+                Have a business process that could work better?
+              </Typography>
+
+              <Typography
+                sx={{
+                  color: "rgba(255,255,255,0.7)",
+                  maxWidth: 660,
+                  mx: "auto",
+                  lineHeight: 1.75,
+                }}
+              >
+                Tell me how it works today. I can help map the workflow and
+                understand whether custom software would make it simpler, faster
+                or easier to manage.
+              </Typography>
+
+              <Button
+                component={RouterLink}
+                to="/contact"
+                variant="contained"
+                endIcon={<ArrowForward />}
+                sx={{
+                  mt: 3.5,
                   backgroundColor: "#FF3366",
                   color: "white",
+                  px: 3.5,
+                  py: 1.25,
+                  borderRadius: 7,
+                  textTransform: "none",
+                  fontWeight: 800,
                   "&:hover": { backgroundColor: "#E62E5C" },
-                  px: 4,
-                  py: 1,
                 }}
-                href="/contact"
               >
-                Let's Work Together
+                Discuss Your Project
               </Button>
             </Box>
           </motion.div>

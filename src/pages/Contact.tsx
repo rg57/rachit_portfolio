@@ -9,9 +9,18 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  MenuItem,
+  Chip,
 } from "@mui/material"
 import { motion } from "framer-motion"
-import { GitHub, LinkedIn, ExpandMore } from "@mui/icons-material"
+import {
+  GitHub,
+  LinkedIn,
+  ExpandMore,
+  ArrowForward,
+  CheckCircleOutline,
+  BusinessCenter,
+} from "@mui/icons-material"
 import YouTubeIcon from "@mui/icons-material/YouTube"
 
 export default function Contact() {
@@ -25,130 +34,191 @@ export default function Contact() {
     {
       icon: <YouTubeIcon />,
       href: "https://www.youtube.com/@codeplaytech6467",
-      label: "Twitter",
+      label: "YouTube",
     },
-    // {
-    //   icon: <Share />,
-    //   href: portfolioUrl,
-    //   label: "Share",
-    //   onClick: (e: any) => {
-    //     e.preventDefault()
-    //     if (navigator.share) {
-    //       // Use the native share API if available
-    //       navigator
-    //         .share({
-    //           title: "Check out my portfolio",
-    //           text: "Explore my portfolio and projects!",
-    //           url: portfolioUrl,
-    //         })
-    //         .then(() => console.log("Thanks for sharing!"))
-    //         .catch((err) => console.error("Error sharing:", err))
-    //     } else if (navigator.clipboard) {
-    //       // Fallback to copying link to clipboard
-    //       navigator.clipboard
-    //         .writeText(portfolioUrl)
-    //         .then(() => alert("Portfolio link copied to clipboard!"))
-    //         .catch((err) =>
-    //           console.error("Failed to copy the portfolio link:", err)
-    //         )
-    //     } else {
-    //       // Absolute fallback: Notify users of manual sharing
-    //       alert(
-    //         "Sharing is not supported on your device. Please copy and share the link manually."
-    //       )
-    //     }
-    //   },
-    // },
   ]
-  console.log("hello world")
+
   const faqItems = [
     {
-      question: "Who are Full Stack software developer?",
+      question: "What kind of projects do you usually work on?",
       answer:
-        "Full Stack Software Developer specializing in crafting seamless user experiences on the client side, designing intuitive UIs, and architecting robust applications. Proficient in server-side development, including creating application logic, setting up databases, providing API functionality, and ensuring smooth testing and deployment.",
+        "I mainly work on custom business software such as CRM systems, ERP and internal tools, inventory and sales applications, field-sales apps, admin dashboards and custom mobile applications. I also take on selected web and API development work where it fits the business requirement.",
     },
     {
-      question: "What is your experience in software development?",
+      question: "Can you understand an existing manual business process first?",
       answer:
-        "I have over 5 years of experience in full-stack development, specializing in creating modern, scalable web , mobile and enterpises applications.",
+        "Yes. In fact, that is usually where I prefer to start. We can first discuss how your current process works — including spreadsheets, WhatsApp, registers, approvals, reporting or existing software — and then identify what is actually worth automating.",
     },
     {
-      question: "How do you charge for your services?",
+      question: "Do I need to know exactly what software I need?",
       answer:
-        "I offer flexible pricing models based on the project scope, including hourly rates and fixed project costs. Feel free to reach out for a detailed quote.",
+        "No. You can simply explain the business problem or workflow. I can help map the process, identify the required users and data, and then suggest an appropriate solution instead of starting with a fixed feature list.",
+    },
+    {
+      question: "How do you charge for projects?",
+      answer:
+        "Pricing depends on the project scope, complexity, number of modules and support requirements. I can work with fixed project pricing or milestone-based development after the requirements are reasonably clear.",
     },
     {
       question: "Do you provide ongoing maintenance and support?",
       answer:
-        "Yes, I offer maintenance packages that ensure your software stays up-to-date and performs optimally.",
+        "Yes. Ongoing maintenance, bug fixes, deployment support and future improvements can be discussed as part of the project or as a separate support arrangement.",
     },
     {
-      question: "What technologies do you specialize in?",
+      question: "What technologies do you work with?",
       answer:
-        "I specialize in React, React Native, Node.js, Spring Boot, Java , Python , MongoDb , Mysql ,Aws and modern DevOps practices for scalable solutions.",
+        "My core stack includes React, React Native, Node.js, Spring Boot, Java, Firebase, MySQL, MongoDB and AWS. I choose the stack based on the product and business requirements rather than forcing every project into the same architecture.",
     },
     {
-      question: "How do you handle communication and updates during a project?",
+      question: "How do you handle communication during development?",
       answer:
-        "I ensure transparent communication with regular updates via preferred platforms like email, whatsapp or by calling",
-    },
-    {
-      question: "Can you help with UI/UX design?",
-      answer:
-        "Absolutely! I collaborate with designers to create visually appealing and user-friendly interfaces.",
+        "I prefer clear, regular communication with milestone-based updates. Depending on the project, communication can happen through email, WhatsApp, calls or another agreed platform.",
     },
   ]
+
+  const fieldSx = {
+    "& .MuiInputLabel-root": {
+      color: "rgba(255,255,255,0.66)",
+    },
+    "& .MuiInputLabel-root.Mui-focused": {
+      color: "#FF3366",
+    },
+    "& .MuiInputBase-input": {
+      color: "white",
+    },
+    "& .MuiSelect-icon": {
+      color: "rgba(255,255,255,0.72)",
+    },
+    "& .MuiOutlinedInput-root": {
+      backgroundColor: "rgba(255,255,255,0.025)",
+      "& fieldset": {
+        borderColor: "rgba(255,255,255,0.18)",
+      },
+      "&:hover fieldset": {
+        borderColor: "rgba(255,255,255,0.34)",
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: "#FF3366",
+      },
+    },
+  }
 
   return (
     <Box
       sx={{
-        background: "linear-gradient(135deg, #2A0845 0%, #6441A5 100%)",
+        background:
+          "radial-gradient(circle at 82% 12%, rgba(255,51,102,0.13), transparent 28%), linear-gradient(135deg, #24073E 0%, #351052 50%, #4A1D6A 100%)",
         minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
         color: "white",
-        py: 8,
+        py: { xs: 8, md: 10 },
       }}
     >
-      <Container maxWidth="lg" sx={{ mt: 8 }}>
-        <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={6}>
+      <Container maxWidth="lg" sx={{ mt: { xs: 7, md: 8 } }}>
+        <Grid container spacing={{ xs: 5, md: 7 }} alignItems="flex-start">
+          {/* LEFT SIDE */}
+          <Grid item xs={12} md={5}>
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -35 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
             >
+              <Chip
+                label="Start a Conversation"
+                variant="outlined"
+                sx={{
+                  color: "white",
+                  borderColor: "rgba(255,51,102,0.62)",
+                  bgcolor: "rgba(255,51,102,0.08)",
+                  fontWeight: 700,
+                  mb: 3,
+                }}
+              />
+
               <Typography
                 variant="h2"
-                gutterBottom
                 sx={{
-                  fontWeight: 700,
-                  mb: 4,
-                  background: "linear-gradient(to right, #fff, #e0e0e0)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
+                  fontWeight: 800,
+                  fontSize: { xs: "2.5rem", sm: "3.2rem", md: "4rem" },
+                  lineHeight: 1.06,
+                  letterSpacing: "-0.045em",
                 }}
               >
-                Let's Connect
+                Tell me how your business{" "}
+                <Box component="span" sx={{ color: "#FF3366" }}>
+                  works today.
+                </Box>
               </Typography>
+
               <Typography
-                variant="body1"
                 sx={{
-                  color: "rgba(255, 255, 255, 0.8)",
-                  mb: 4,
-                  fontSize: "1.1rem",
+                  color: "rgba(255,255,255,0.72)",
+                  mt: 3,
+                  fontSize: { xs: "1rem", md: "1.08rem" },
+                  lineHeight: 1.8,
                 }}
               >
-                I'm always open to new opportunities and collaborations. Feel
-                free to reach out if you have a project in mind or just want to
-                say hello!
+                You do not need to arrive with a finished software specification.
+                Explain the process, where the friction is, and what you want to
+                improve. I can help translate that into a practical software
+                solution.
               </Typography>
-              <Box sx={{ display: "flex", gap: 2, mb: 4 }}>
-                {socialLinks.map((social, index) => (
+
+              <Box
+                sx={{
+                  mt: 4,
+                  p: 3,
+                  borderRadius: 4,
+                  bgcolor: "rgba(255,51,102,0.07)",
+                  border: "1px solid rgba(255,51,102,0.22)",
+                }}
+              >
+                <Typography
+                  variant="h6"
+                  sx={{ fontWeight: 800, mb: 2 }}
+                >
+                  Useful things to tell me
+                </Typography>
+
+                {[
+                  "What your business does",
+                  "How the process is handled today",
+                  "Where you are losing time or visibility",
+                  "Who would use the software",
+                  "What outcome you want to improve",
+                ].map((item) => (
+                  <Box
+                    key={item}
+                    sx={{
+                      display: "flex",
+                      gap: 1.2,
+                      alignItems: "flex-start",
+                      mb: 1.35,
+                    }}
+                  >
+                    <CheckCircleOutline
+                      sx={{
+                        color: "#FF3366",
+                        fontSize: 19,
+                        mt: "2px",
+                        flexShrink: 0,
+                      }}
+                    />
+                    <Typography
+                      sx={{
+                        color: "rgba(255,255,255,0.78)",
+                        lineHeight: 1.6,
+                      }}
+                    >
+                      {item}
+                    </Typography>
+                  </Box>
+                ))}
+              </Box>
+
+              <Box sx={{ display: "flex", gap: 2, mt: 4 }}>
+                {socialLinks.map((social) => (
                   <IconButton
-                    key={index}
+                    key={social.label}
                     component="a"
                     href={social.href}
                     target="_blank"
@@ -156,10 +226,10 @@ export default function Contact() {
                     aria-label={social.label}
                     sx={{
                       color: "white",
-                      border: "1px solid rgba(255, 255, 255, 0.3)",
-                      transition: "all 0.3s ease",
+                      border: "1px solid rgba(255,255,255,0.22)",
+                      transition: "all 0.25s ease",
                       "&:hover": {
-                        backgroundColor: "rgba(255, 51, 102, 0.1)",
+                        backgroundColor: "rgba(255,51,102,0.10)",
                         borderColor: "#FF3366",
                         transform: "translateY(-3px)",
                       },
@@ -171,181 +241,331 @@ export default function Contact() {
               </Box>
             </motion.div>
           </Grid>
-          <Grid item xs={12} md={6}>
+
+          {/* FORM */}
+          <Grid item xs={12} md={7}>
             <motion.div
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 35 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.15 }}
             >
               <Box
                 component="form"
                 action="https://formspree.io/f/xgvebzvl"
                 method="POST"
-                // onSubmit={handleSubmit}
                 noValidate
                 sx={{
                   display: "flex",
                   flexDirection: "column",
-                  gap: 3,
-                  p: 4,
-                  borderRadius: 3,
-                  background: "rgba(255, 255, 255, 0.1)",
-                  backdropFilter: "blur(15px)",
-                  border: "1px solid rgba(255, 255, 255, 0.2)",
-                  boxShadow: "0px 6px 25px rgba(0, 0, 0, 0.3)",
+                  gap: 2.4,
+                  p: { xs: 3, sm: 4 },
+                  borderRadius: 5,
+                  background: "rgba(17,5,31,0.46)",
+                  backdropFilter: "blur(16px)",
+                  border: "1px solid rgba(255,255,255,0.12)",
+                  boxShadow: "0 22px 70px rgba(0,0,0,0.22)",
                 }}
               >
+                <Box>
+                  <Typography
+                    variant="h4"
+                    sx={{ fontWeight: 800, mb: 0.8 }}
+                  >
+                    Discuss your project
+                  </Typography>
+                  <Typography
+                    sx={{
+                      color: "rgba(255,255,255,0.62)",
+                      lineHeight: 1.65,
+                    }}
+                  >
+                    A little context helps me understand whether I can genuinely
+                    help before we spend time on a call.
+                  </Typography>
+                </Box>
+
+                <Grid container spacing={2}>
+                  <Grid item xs={12} sm={6}>
+                    <TextField
+                      fullWidth
+                      id="name"
+                      label="Your Name"
+                      name="name"
+                      required
+                      variant="outlined"
+                      sx={fieldSx}
+                    />
+                  </Grid>
+
+                  <Grid item xs={12} sm={6}>
+                    <TextField
+                      fullWidth
+                      id="email"
+                      label="Email Address"
+                      name="email"
+                      type="email"
+                      required
+                      variant="outlined"
+                      sx={fieldSx}
+                    />
+                  </Grid>
+
+                  <Grid item xs={12} sm={6}>
+                    <TextField
+                      fullWidth
+                      id="contact"
+                      label="Contact Number"
+                      name="contact"
+                      variant="outlined"
+                      sx={fieldSx}
+                    />
+                  </Grid>
+
+                  <Grid item xs={12} sm={6}>
+                    <TextField
+                      fullWidth
+                      id="company"
+                      label="Company / Business"
+                      name="company"
+                      variant="outlined"
+                      sx={fieldSx}
+                    />
+                  </Grid>
+                </Grid>
+
                 <TextField
                   fullWidth
-                  id="name"
-                  label="Your Name"
-                  name="name"
-                  required
+                  select
+                  id="projectType"
+                  label="What do you need help with?"
+                  name="projectType"
+                  defaultValue=""
                   variant="outlined"
-                  InputLabelProps={{
-                    style: { color: "rgba(255, 255, 255, 0.7)" },
-                  }}
-                  sx={{
-                    input: { color: "white" },
-                    "& .MuiOutlinedInput-root": {
-                      "& fieldset": {
-                        borderColor: "rgba(255, 255, 255, 0.3)",
-                      },
-                      "&:hover fieldset": {
-                        borderColor: "rgba(255, 255, 255, 0.5)",
-                      },
-                      "&.Mui-focused fieldset": {
-                        borderColor: "#FF3366",
-                      },
-                    },
-                  }}
-                />
+                  sx={fieldSx}
+                >
+                  <MenuItem value="">Select a project type</MenuItem>
+                  <MenuItem value="CRM / Customer Management">
+                    CRM / Customer Management
+                  </MenuItem>
+                  <MenuItem value="ERP / Internal Business Software">
+                    ERP / Internal Business Software
+                  </MenuItem>
+                  <MenuItem value="Inventory / Distribution System">
+                    Inventory / Distribution System
+                  </MenuItem>
+                  <MenuItem value="Field Sales Application">
+                    Field Sales Application
+                  </MenuItem>
+                  <MenuItem value="Business Dashboard">
+                    Business Dashboard
+                  </MenuItem>
+                  <MenuItem value="Mobile Application">
+                    Mobile Application
+                  </MenuItem>
+                  <MenuItem value="Website / Web Application">
+                    Website / Web Application
+                  </MenuItem>
+                  <MenuItem value="Not Sure Yet">
+                    Not Sure Yet — I want to discuss the process
+                  </MenuItem>
+                  <MenuItem value="Other">Other</MenuItem>
+                </TextField>
+
                 <TextField
                   fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  required
+                  id="currentProcess"
+                  label="How do you handle this process today?"
+                  name="currentProcess"
+                  multiline
+                  rows={3}
                   variant="outlined"
-                  InputLabelProps={{
-                    style: { color: "rgba(255, 255, 255, 0.7)" },
-                  }}
+                  placeholder="For example: Excel, WhatsApp, paper registers, existing software, manual follow-ups..."
                   sx={{
-                    input: { color: "white" },
-                    "& .MuiOutlinedInput-root": {
-                      "& fieldset": {
-                        borderColor: "rgba(255, 255, 255, 0.3)",
-                      },
-                      "&:hover fieldset": {
-                        borderColor: "rgba(255, 255, 255, 0.5)",
-                      },
-                      "&.Mui-focused fieldset": {
-                        borderColor: "#FF3366",
-                      },
-                    },
+                    ...fieldSx,
+                    "& textarea": { color: "white" },
                   }}
                 />
-                <TextField
-                  fullWidth
-                  id="contact"
-                  label="Contact Number"
-                  name="contact"
-                  variant="outlined"
-                  InputLabelProps={{
-                    style: { color: "rgba(255, 255, 255, 0.7)" },
-                  }}
-                  sx={{
-                    input: { color: "white" },
-                    "& .MuiOutlinedInput-root": {
-                      "& fieldset": {
-                        borderColor: "rgba(255, 255, 255, 0.3)",
-                      },
-                      "&:hover fieldset": {
-                        borderColor: "rgba(255, 255, 255, 0.5)",
-                      },
-                      "&.Mui-focused fieldset": {
-                        borderColor: "#FF3366",
-                      },
-                    },
-                  }}
-                />
+
                 <TextField
                   fullWidth
                   id="message"
-                  label="Your Message"
+                  label="What would you like to improve?"
                   name="message"
                   multiline
                   rows={4}
                   required
                   variant="outlined"
-                  InputLabelProps={{
-                    style: { color: "rgba(255, 255, 255, 0.7)" },
-                  }}
+                  placeholder="Describe the problem, users involved, main requirements or the result you want from the software."
                   sx={{
-                    textarea: { color: "white" },
-                    "& .MuiOutlinedInput-root": {
-                      "& fieldset": {
-                        borderColor: "rgba(255, 255, 255, 0.3)",
-                      },
-                      "&:hover fieldset": {
-                        borderColor: "rgba(255, 255, 255, 0.5)",
-                      },
-                      "&.Mui-focused fieldset": {
-                        borderColor: "#FF3366",
-                      },
-                    },
+                    ...fieldSx,
+                    "& textarea": { color: "white" },
                   }}
                 />
+
+                <TextField
+                  fullWidth
+                  select
+                  id="budget"
+                  label="Approximate Project Budget"
+                  name="budget"
+                  defaultValue=""
+                  variant="outlined"
+                  sx={fieldSx}
+                >
+                  <MenuItem value="">Prefer not to say / Not sure yet</MenuItem>
+                  <MenuItem value="Under ₹25,000">Under ₹25,000</MenuItem>
+                  <MenuItem value="₹25,000 - ₹50,000">
+                    ₹25,000 - ₹50,000
+                  </MenuItem>
+                  <MenuItem value="₹50,000 - ₹1,00,000">
+                    ₹50,000 - ₹1,00,000
+                  </MenuItem>
+                  <MenuItem value="₹1,00,000 - ₹2,50,000">
+                    ₹1,00,000 - ₹2,50,000
+                  </MenuItem>
+                  <MenuItem value="₹2,50,000+">₹2,50,000+</MenuItem>
+                </TextField>
+
                 <Button
                   type="submit"
                   fullWidth
                   variant="contained"
+                  endIcon={<ArrowForward />}
                   sx={{
-                    mt: 2,
-                    py: 1.5,
-                    fontSize: "1.1rem",
-                    fontWeight: 700,
-                    borderRadius: 30,
-                    background: "linear-gradient(to right, #FF3366, #E62E5C)",
+                    mt: 1,
+                    py: 1.45,
+                    fontSize: "1rem",
+                    fontWeight: 800,
+                    borderRadius: 8,
+                    background: "#FF3366",
                     textTransform: "none",
-                    transition: "all 0.3s ease",
+                    transition: "all 0.25s ease",
                     "&:hover": {
-                      background: "linear-gradient(to right, #E62E5C, #FF3366)",
-                      transform: "translateY(-3px)",
-                      boxShadow: "0 4px 20px rgba(255, 51, 102, 0.4)",
+                      background: "#E62E5C",
+                      transform: "translateY(-2px)",
+                      boxShadow: "0 8px 26px rgba(255,51,102,0.30)",
                     },
                   }}
                 >
-                  Send Message
+                  Send Project Details
                 </Button>
+
+                <Typography
+                  variant="caption"
+                  sx={{
+                    textAlign: "center",
+                    color: "rgba(255,255,255,0.48)",
+                  }}
+                >
+                  No complete specification required. A clear description of the
+                  current problem is enough to start.
+                </Typography>
               </Box>
             </motion.div>
           </Grid>
         </Grid>
 
-        {/* FAQ Section */}
-        <Box sx={{ mt: 8 }}>
+        {/* SMALL POSITIONING STRIP */}
+        <Box
+          sx={{
+            mt: { xs: 7, md: 9 },
+            p: { xs: 3, md: 4 },
+            borderRadius: 5,
+            bgcolor: "rgba(255,51,102,0.08)",
+            border: "1px solid rgba(255,51,102,0.22)",
+          }}
+        >
+          <Grid container spacing={3} alignItems="center">
+            <Grid item xs={12} md={7}>
+              <Box sx={{ display: "flex", gap: 2, alignItems: "flex-start" }}>
+                <Box
+                  sx={{
+                    width: 48,
+                    height: 48,
+                    minWidth: 48,
+                    borderRadius: 3,
+                    bgcolor: "rgba(255,51,102,0.14)",
+                    display: "grid",
+                    placeItems: "center",
+                  }}
+                >
+                  <BusinessCenter sx={{ color: "#FF3366" }} />
+                </Box>
+
+                <Box>
+                  <Typography
+                    variant="h5"
+                    sx={{ fontWeight: 800 }}
+                  >
+                    Not sure whether you need custom software?
+                  </Typography>
+                  <Typography
+                    sx={{
+                      color: "rgba(255,255,255,0.68)",
+                      mt: 1,
+                      lineHeight: 1.7,
+                    }}
+                  >
+                    That is completely fine. Start with the business process.
+                    Sometimes the right answer is a full application; sometimes
+                    it is a much smaller internal tool.
+                  </Typography>
+                </Box>
+              </Box>
+            </Grid>
+
+            <Grid item xs={12} md={5}>
+              <Typography
+                sx={{
+                  color: "rgba(255,255,255,0.8)",
+                  lineHeight: 1.75,
+                }}
+              >
+                My goal is to understand the problem first and recommend a scope
+                that is useful for the business — not to add unnecessary features.
+              </Typography>
+            </Grid>
+          </Grid>
+        </Box>
+
+        {/* FAQ */}
+        <Box sx={{ mt: { xs: 7, md: 9 } }}>
           <Typography
-            variant="h4"
-            gutterBottom
+            variant="overline"
             sx={{
-              fontWeight: 700,
+              display: "block",
               textAlign: "center",
-              mb: 4,
-              color: "rgba(255, 255, 255, 0.9)",
+              color: "#FF3366",
+              fontWeight: 800,
+              letterSpacing: "0.14em",
+              mb: 0.5,
             }}
           >
-            Frequently Asked Questions
+            Before We Start
           </Typography>
+
+          <Typography
+            variant="h3"
+            sx={{
+              fontWeight: 800,
+              textAlign: "center",
+              mb: 4,
+              fontSize: { xs: "2rem", md: "2.7rem" },
+            }}
+          >
+            Frequently asked questions
+          </Typography>
+
           {faqItems.map((faq, index) => (
             <Accordion
               key={index}
               sx={{
-                background: "rgba(255, 255, 255, 0.1)",
-                border: "1px solid rgba(255, 255, 255, 0.3)",
-                borderRadius: "10px",
-                mb: 2,
+                background: "rgba(17,5,31,0.40)",
+                border: "1px solid rgba(255,255,255,0.11)",
+                borderRadius: "14px !important",
+                mb: 1.5,
                 boxShadow: "none",
+                overflow: "hidden",
                 "&:before": { display: "none" },
               }}
             >
@@ -354,16 +574,24 @@ export default function Contact() {
                 aria-controls={`panel${index}-content`}
                 id={`panel${index}-header`}
                 sx={{
-                  color: "rgba(255, 255, 255, 0.9)",
-                  "&:hover": { background: "rgba(255, 255, 255, 0.05)" },
+                  color: "rgba(255,255,255,0.92)",
+                  minHeight: 64,
+                  "&:hover": {
+                    background: "rgba(255,255,255,0.03)",
+                  },
                 }}
               >
-                <Typography sx={{ fontWeight: 600 }}>{faq.question}</Typography>
+                <Typography sx={{ fontWeight: 700 }}>
+                  {faq.question}
+                </Typography>
               </AccordionSummary>
+
               <AccordionDetails
                 sx={{
-                  color: "rgba(255, 255, 255, 0.7)",
+                  color: "rgba(255,255,255,0.68)",
                   lineHeight: 1.8,
+                  pt: 0,
+                  pb: 3,
                 }}
               >
                 {faq.answer}
