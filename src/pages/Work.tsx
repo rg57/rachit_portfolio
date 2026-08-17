@@ -18,10 +18,8 @@ import {
   BusinessCenter,
   CheckCircleOutline,
   Close as CloseIcon,
-  Construction,
   Inventory2,
   Launch,
-  PhoneAndroid,
   TrendingUp,
 } from "@mui/icons-material"
 import { AnimatePresence, motion } from "framer-motion"

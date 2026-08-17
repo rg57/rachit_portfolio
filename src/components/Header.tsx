@@ -18,7 +18,6 @@ import HomeIcon from "@mui/icons-material/Home"
 import WorkIcon from "@mui/icons-material/Work"
 import CodeIcon from "@mui/icons-material/Code"
 import PersonIcon from "@mui/icons-material/Person"
-import EmailIcon from "@mui/icons-material/Email"
 import MenuIcon from "@mui/icons-material/Menu"
 import CloseIcon from "@mui/icons-material/Close"
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward"
@@ -131,9 +130,7 @@ export default function Header() {
                 px: 1.5,
                 color: "white",
                 textDecoration: "none",
-                bgcolor: active
-                  ? "rgba(255,51,102,0.14)"
-                  : "transparent",
+                bgcolor: active ? "rgba(255,51,102,0.14)" : "transparent",
                 border: active
                   ? "1px solid rgba(255,51,102,0.24)"
                   : "1px solid transparent",
