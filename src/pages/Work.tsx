@@ -48,6 +48,7 @@ import nabsvendor3 from "../assets/nabsvendor3.png"
 import nabscustomer1 from "../assets/nabscustomer1.png"
 import nabscustomer2 from "../assets/nabscustomer2.png"
 import nabscustomer3 from "../assets/nabscustomer3.png"
+import DMLOGO from "../assets/DM_logo.png"
 
 interface Project {
   title: string
@@ -155,6 +156,7 @@ const projects: Project[] = [
       "Designed a centralized business-management workflow around actual operating requirements, bringing core commercial and inventory processes into one internal system.",
     outcome:
       "Provides a single operational view of the business and serves as a real-world test environment for improving workflows as the company grows.",
+    image: DMLOGO,
     skills: [
       "Business Analysis",
       "CRM",
